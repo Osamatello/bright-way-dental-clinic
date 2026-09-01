@@ -1,0 +1,128 @@
+{
+  "Metadata": {
+    "title": "Bright Way Dental Clinic",
+    "description": "A premium bilingual website foundation for Bright Way Dental Clinic."
+  },
+  "Navigation": {
+    "treatments": "Treatments",
+    "about": "About",
+    "doctor": "The Doctor",
+    "experience": "Patient Experience",
+    "faq": "FAQ",
+    "book": "Book an appointment",
+    "menu": "Open navigation",
+    "close": "Close navigation"
+  },
+  "Brand": {
+    "clinic": "Dental Clinic"
+  },
+  "Preview": {
+    "eyebrow": "Design foundation · Milestone 01",
+    "titleLineOne": "Quiet confidence,",
+    "titleLineTwo": "thoughtfully designed.",
+    "intro": "A warm, restrained visual system created for a modern private dental clinic — balancing clinical clarity with a more personal sense of care.",
+    "primaryAction": "Book an appointment",
+    "secondaryAction": "Explore the system",
+    "note": "This is the approved design foundation preview. Homepage content begins in Milestone 02.",
+    "paletteEyebrow": "01 · Colour system",
+    "paletteTitle": "Warmth first. Navy with restraint.",
+    "paletteBody": "Cream and ivory carry the atmosphere. Deep navy gives structure and confidence without turning the experience into a traditional medical website.",
+    "cream": "Warm cream",
+    "ivory": "Soft ivory",
+    "white": "Clean white",
+    "navy": "Deep navy",
+    "sand": "Sand cream",
+    "slate": "Muted slate",
+    "typeEyebrow": "02 · Typography",
+    "typeTitle": "Editorial elegance, made easy to read.",
+    "typeBody": "Expressive serif headlines introduce warmth and distinction. A clean sans serif keeps navigation, details and calls to action precise.",
+    "displaySample": "Care should feel considered.",
+    "displayCaption": "Newsreader · Display",
+    "bodySample": "Clear communication and a calm environment are essential parts of a more thoughtful dental experience.",
+    "bodyCaption": "Manrope · Interface & body",
+    "rhythmEyebrow": "03 · Interface language",
+    "rhythmTitle": "Calm, direct and intentionally simple.",
+    "rhythmBody": "Fine rules, generous space and careful hierarchy replace excessive cards, shadows and decorative medical graphics.",
+    "principleOne": "Warm minimalism",
+    "principleOneBody": "Ivory surfaces, soft contrast and room for content to breathe.",
+    "principleTwo": "Clear conversion",
+    "principleTwoBody": "One dominant booking action supported by quiet secondary links.",
+    "principleThree": "Bilingual by design",
+    "principleThreeBody": "English and Arabic receive equal hierarchy, spacing and visual care.",
+    "detailLabel": "A considered detail",
+    "detailTitle": "Premium does not need to feel distant.",
+    "detailBody": "The system pairs an elevated visual language with calm, human copy. It is designed to earn trust before asking the visitor to act.",
+    "detailLink": "View treatment direction"
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "Modern private dental care",
+      "titleLineOne": "Dentistry,",
+      "titleLineTwo": "thoughtfully different.",
+      "description": "A calm, personal approach to dental care — designed around clear communication, considered treatment and your confidence at every step.",
+      "primaryAction": "Book an appointment",
+      "secondaryAction": "View treatments",
+      "imageAlt": "Warm, modern private dental clinic interior",
+      "imageCaption": "A calmer setting for considered care",
+      "scrollLabel": "Discover Bright Way"
+    },
+    "treatments": {
+      "eyebrow": "Treatments",
+      "title": "Care for every stage of your smile.",
+      "description": "From everyday dental care to more advanced treatments, each journey begins with understanding what matters to you.",
+      "learnMore": "Explore treatment",
+      "items": {
+        "general": {
+          "number": "01",
+          "title": "General Dentistry",
+          "description": "Routine care focused on maintaining the health, comfort and function of your teeth."
+        },
+        "cosmetic": {
+          "number": "02",
+          "title": "Cosmetic Dentistry",
+          "description": "Personalised options designed to refine the appearance of your smile with a natural result in mind."
+        },
+        "implants": {
+          "number": "03",
+          "title": "Dental Implants",
+          "description": "A structured consultation-led approach to replacing missing teeth and restoring confidence."
+        }
+      }
+    },
+    "about": {
+      "eyebrow": "About Bright Way",
+      "title": "A more human approach to modern dentistry.",
+      "statement": "Thoughtful care starts by listening.",
+      "descriptionOne": "Bright Way is being shaped around a simple idea: dental care should feel clear, calm and personal from the first conversation.",
+      "descriptionTwo": "Every detail of the experience is considered to help patients feel informed, comfortable and confident in the decisions they make.",
+      "action": "Discover Bright Way",
+      "detailOne": "Clear communication",
+      "detailTwo": "Considered treatment",
+      "detailThree": "A calm environment"
+    },
+    "doctor": {
+      "eyebrow": "Meet the doctor",
+      "title": "Care built on attention, clarity and trust.",
+      "description": "The doctor profile will introduce the clinical philosophy, approach to patient care and verified professional details once they are provided by the clinic.",
+      "action": "Book a consultation",
+      "portraitLabel": "Doctor portrait",
+      "placeholder": "Official portrait and verified profile details will be added here."
+    },
+    "appointment": {
+      "eyebrow": "Your next step",
+      "title": "Ready to begin with a personal consultation?",
+      "description": "Tell us how we can help. Appointment and contact details will be connected once the clinic confirms its preferred booking process.",
+      "primaryAction": "Book an appointment",
+      "secondaryAction": "Contact the clinic",
+      "availability": "Booking integration coming in a later milestone"
+    }
+  },
+  "Footer": {
+    "description": "A warm, modern foundation for thoughtful dental care.",
+    "explore": "Explore",
+    "contact": "Contact",
+    "placeholder": "Clinic details will be added after confirmation.",
+    "rights": "Bright Way Dental Clinic. Demo website.",
+    "privacy": "Privacy"
+  }
+}
