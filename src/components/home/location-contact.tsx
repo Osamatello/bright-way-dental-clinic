@@ -53,11 +53,11 @@ export async function LocationContact({ locale }: LocationContactProps) {
             </dl>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={`/${locale}/#appointment`}>
+              <ButtonLink href={`/${locale}/contact`}>
                 {t("primaryAction")}
               </ButtonLink>
               <ButtonLink
-                href={`/${locale}/#contact-section`}
+                href={`/${locale}/contact#clinic-details`}
                 variant="secondary"
               >
                 {t("secondaryAction")}

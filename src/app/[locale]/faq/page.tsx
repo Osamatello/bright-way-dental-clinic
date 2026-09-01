@@ -3,11 +3,10 @@ import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
-import { TreatmentsOverview } from "@/components/treatments/treatments-overview";
+import { FaqPage as FaqContent } from "@/components/faq/faq-page";
 import { routing, type AppLocale } from "@/i18n/routing";
-import { createPageMetadata } from "@/lib/seo";
 
-type TreatmentsPageProps = {
+type FaqPageProps = {
   params: Promise<{ locale: string }>;
 };
 
@@ -17,25 +16,23 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: TreatmentsPageProps): Promise<Metadata> {
+}: FaqPageProps): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
-  const t = await getTranslations({ locale, namespace: "Treatments.overview" });
+  const t = await getTranslations({ locale, namespace: "FaqPage.metadata" });
 
-  return createPageMetadata({
+  return {
     title: t("title"),
     description: t("description"),
-    locale: locale as AppLocale,
-    path: "treatments",
-  });
+  };
 }
 
-export default async function TreatmentsPage({ params }: TreatmentsPageProps) {
+export default async function FaqPageRoute({ params }: FaqPageProps) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
   setRequestLocale(locale);
 
-  return <TreatmentsOverview locale={locale as AppLocale} />;
+  return <FaqContent locale={locale as AppLocale} />;
 }

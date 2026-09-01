@@ -3,11 +3,11 @@ import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
-import { TreatmentsOverview } from "@/components/treatments/treatments-overview";
+import { AboutPage as AboutContent } from "@/components/about/about-page";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { createPageMetadata } from "@/lib/seo";
 
-type TreatmentsPageProps = {
+type AboutPageProps = {
   params: Promise<{ locale: string }>;
 };
 
@@ -17,25 +17,25 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: TreatmentsPageProps): Promise<Metadata> {
+}: AboutPageProps): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
-  const t = await getTranslations({ locale, namespace: "Treatments.overview" });
+  const t = await getTranslations({ locale, namespace: "About.metadata" });
 
   return createPageMetadata({
     title: t("title"),
     description: t("description"),
     locale: locale as AppLocale,
-    path: "treatments",
+    path: "about",
   });
 }
 
-export default async function TreatmentsPage({ params }: TreatmentsPageProps) {
+export default async function AboutPageRoute({ params }: AboutPageProps) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
   setRequestLocale(locale);
 
-  return <TreatmentsOverview locale={locale as AppLocale} />;
+  return <AboutContent locale={locale as AppLocale} />;
 }

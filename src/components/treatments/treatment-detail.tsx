@@ -54,11 +54,11 @@ export async function TreatmentDetail({
             {intro}
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href={`/${locale}#appointment`}>
+            <ButtonLink href={`/${locale}/contact`}>
               {t("bookAction")}
             </ButtonLink>
             <ButtonLink
-              href={`/${locale}#contact-section`}
+              href={`/${locale}/contact#clinic-details`}
               variant="secondary"
             >
               {t("contactAction")}
@@ -179,11 +179,11 @@ export async function TreatmentDetail({
               {title}
             </h2>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={`/${locale}#appointment`}>
+              <ButtonLink href={`/${locale}/contact`}>
                 {t("bookAction")}
               </ButtonLink>
               <ButtonLink
-                href={`/${locale}#contact-section`}
+                href={`/${locale}/contact#clinic-details`}
                 variant="secondary"
               >
                 {t("contactAction")}

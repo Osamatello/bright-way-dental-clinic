@@ -50,7 +50,7 @@ export async function AboutPreview({ locale }: AboutPreviewProps) {
 
             <ButtonLink
               className="mt-9"
-              href={`/${locale}/#doctor`}
+              href={`/${locale}/about`}
               variant="secondary"
             >
               {t("action")}

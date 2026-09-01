@@ -94,7 +94,7 @@ export function MobileNavigation({
             <LocaleSwitcher locale={locale} />
             <Link
               className="inline-flex min-h-12 flex-1 items-center justify-center bg-navy px-5 text-xs font-semibold uppercase tracking-[0.13em] text-white"
-              href={`/${locale}/#appointment`}
+              href={`/${locale}/contact`}
               onClick={() => setIsOpen(false)}
             >
               {bookLabel}

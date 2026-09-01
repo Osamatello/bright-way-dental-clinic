@@ -7,8 +7,10 @@
     "treatments": "Treatments",
     "about": "About",
     "doctor": "The Doctor",
-    "experience": "Patient Experience",
+    "results": "Results",
     "faq": "FAQ",
+    "contact": "Contact",
+    "experience": "Patient Experience",
     "book": "Book an appointment",
     "menu": "Open navigation",
     "close": "Close navigation"
@@ -104,7 +106,7 @@
       "eyebrow": "Meet the doctor",
       "title": "Care built on attention, clarity and trust.",
       "description": "The doctor profile will introduce the clinical philosophy, approach to patient care and verified professional details once they are provided by the clinic.",
-      "action": "Book a consultation",
+      "action": "View doctor profile",
       "portraitLabel": "Doctor portrait",
       "placeholder": "Official portrait and verified profile details will be added here."
     },
@@ -112,7 +114,7 @@
       "eyebrow": "Your next step",
       "title": "Ready to begin with a personal consultation?",
       "description": "Tell us how we can help. Appointment and contact details will be connected once the clinic confirms its preferred booking process.",
-      "primaryAction": "Book an appointment",
+      "primaryAction": "Request a consultation",
       "secondaryAction": "Contact the clinic",
       "availability": "Booking integration coming in a later milestone"
     },
@@ -215,7 +217,7 @@
       "whatsappPlaceholder": "WhatsApp number will be added after confirmation.",
       "directionsLabel": "Get directions",
       "mapPlaceholder": "A map will be embedded here once the clinic location is confirmed.",
-      "primaryAction": "Book an appointment",
+      "primaryAction": "Request a consultation",
       "secondaryAction": "Contact the clinic"
     }
   },
@@ -363,6 +365,441 @@
           "Immediate treatment as needed",
           "Follow-up care and planning"
         ]
+      }
+    }
+  },
+  "About": {
+    "metadata": {
+      "title": "About Us",
+      "description": "Discover Bright Way Dental Clinic — a modern, calm dental practice dedicated to thoughtful, unhurried care and clear patient communication."
+    },
+    "hero": {
+      "eyebrow": "About Bright Way",
+      "title": "Dentistry shaped by calm, clarity, and care.",
+      "description": "Bright Way was conceived around a single principle: dental care should feel unhurried, reassuring, and thoroughly personal from the very first moment you enter.",
+      "primaryAction": "Request a consultation",
+      "secondaryAction": "Meet the doctor"
+    },
+    "philosophy": {
+      "eyebrow": "Our Core Philosophy",
+      "title": "Care that begins with listening.",
+      "statement": "We believe modern dentistry is at its best when clinical excellence is matched with genuine attentiveness.",
+      "point1Number": "01",
+      "point1Title": "Unhurried Consultations",
+      "point1Body": "Every appointment is structured with generous time to discuss your goals, answer your questions, and understand your preferences without rush.",
+      "point2Number": "02",
+      "point2Title": "Transparent Guidance",
+      "point2Body": "We present findings with complete clarity — explaining what is recommended, why it matters, and what alternatives exist so you remain fully in control.",
+      "point3Number": "03",
+      "point3Title": "A Calmer Environment",
+      "point3Body": "Our clinic atmosphere is designed to soften clinical apprehension, combining natural light, quiet warmth, and attentive personal care."
+    },
+    "experience": {
+      "eyebrow": "The Patient Experience",
+      "title": "A more considered approach at every step.",
+      "lead": "From the first inquiry to long-term preventive care, our patient experience is designed to ensure you always feel informed, respected, and at ease.",
+      "body1": "We recognise that many individuals carry past dental anxiety or uncertainty about procedures. That is why we place open communication at the centre of our practice — ensuring you always understand what to expect before any clinical step begins.",
+      "body2": "Our clinical recommendations are grounded in conservative, preventive dentistry: preserving your natural tooth structure and maintaining lasting oral wellness through thoughtful planning.",
+      "pillar1Title": "Clear, honest dialogue",
+      "pillar1Body": "No confusing jargon or pressured decisions. Just straightforward explanations tailored to you.",
+      "pillar2Title": "Gentle clinical technique",
+      "pillar2Body": "Prioritising your comfort and peace of mind through careful pacing and gentle methods.",
+      "pillar3Title": "Long-term partnership",
+      "pillar3Body": "Supporting your smile over time with proactive preventive maintenance and trusted advice."
+    },
+    "doctorTeaser": {
+      "eyebrow": "Clinical Leadership",
+      "title": "Meet the Doctor",
+      "description": "Learn more about our clinician's approach to gentle dental care, patient communication, and commitment to clinical excellence.",
+      "action": "View Doctor Profile"
+    },
+    "treatmentsTeaser": {
+      "eyebrow": "Our Services",
+      "title": "Comprehensive treatments, tailored to you.",
+      "description": "From routine preventive care to cosmetic enhancements and dental implants, explore our full range of treatments.",
+      "action": "Explore Treatments"
+    },
+    "appointment": {
+      "eyebrow": "Begin Your Journey",
+      "title": "Experience dentistry, thoughtfully different.",
+      "description": "We invite you to schedule a consultation and experience a calmer, more personal approach to dental wellness.",
+      "primaryAction": "Request a consultation",
+      "secondaryAction": "Contact the clinic"
+    }
+  },
+  "Doctor": {
+    "metadata": {
+      "title": "The Doctor",
+      "description": "Meet the doctor at Bright Way Dental Clinic — dedicated to gentle dentistry, attentive consultations, and lasting patient trust."
+    },
+    "hero": {
+      "eyebrow": "Clinical Profile",
+      "title": "A clinician dedicated to attentive, gentle dentistry.",
+      "subtitle": "Care built on clear communication, clinical precision, and deep respect for each patient's comfort.",
+      "portraitLabel": "Doctor Portrait",
+      "portraitPlaceholder": "Official portrait and verified doctor credentials will be published here upon clinic confirmation."
+    },
+    "philosophy": {
+      "eyebrow": "Clinical Ethos",
+      "title": "A philosophy rooted in patience and precision.",
+      "quote": "\"Our role is not merely to treat teeth, but to guide each person toward lasting oral health with care, understanding, and complete transparency.\"",
+      "body1": "At Bright Way, clinical practice is shaped by the belief that the best outcomes occur when patients feel heard and fully informed. Every clinical decision is guided by conservative dentistry — preserving natural tooth structure wherever possible.",
+      "body2": "Whether you are visiting for a routine examination or exploring a comprehensive treatment plan, the consultation is an open dialogue designed to answer every question at your own pace."
+    },
+    "approach": {
+      "eyebrow": "Patient Approach",
+      "title": "How we care for you during each visit.",
+      "description": "A structured, calm methodology that prioritises your comfort and autonomy from start to finish.",
+      "step1Number": "01",
+      "step1Title": "Attentive Listening",
+      "step1Body": "We take the time to understand your medical history, personal concerns, and aesthetic goals before beginning any clinical assessment.",
+      "step2Number": "02",
+      "step2Title": "Transparent Clinical Discussion",
+      "step2Body": "Diagnostic findings are shared openly with visual explanations, giving you a clear picture of your oral health and available options.",
+      "step3Number": "03",
+      "step3Title": "Gentle, Paced Treatment",
+      "step3Body": "Procedures proceed at a pace comfortable for you, with regular check-ins to ensure your ongoing ease throughout the appointment."
+    },
+    "focusAreas": {
+      "eyebrow": "Areas of Care",
+      "title": "Comprehensive clinical capabilities.",
+      "description": "Providing focused care across all essential domains of modern dental health.",
+      "area1Title": "Preventive & General Dentistry",
+      "area1Description": "Comprehensive examinations, routine hygiene, and preventive care to maintain oral health.",
+      "area2Title": "Aesthetic & Cosmetic Refinements",
+      "area2Description": "Personalised cosmetic treatments designed to enhance your smile with natural harmony.",
+      "area3Title": "Restorative & Implant Solutions",
+      "area3Description": "Structured restorative approaches to rebuild function, stability, and everyday comfort.",
+      "area4Title": "Gentle & Anxious Patient Care",
+      "area4Description": "Considered techniques and calm pacing specifically tailored for apprehensive patients."
+    },
+    "credentials": {
+      "eyebrow": "Professional Standing",
+      "title": "Verified Credentials & Accreditations",
+      "description": "Bright Way maintains strict adherence to clinical standards and professional excellence.",
+      "noticeTitle": "Verified Profile Confirmation Pending",
+      "noticeBody": "Official clinical qualifications, university degrees, licensing body registrations, and specialised memberships are being verified and will be displayed in this section.",
+      "item1Category": "Clinical Education",
+      "item1Placeholder": "Primary Dental Degree & University Information",
+      "item2Category": "Licensing & Regulation",
+      "item2Placeholder": "National Dental Board & Healthcare Authority Registration",
+      "item3Category": "Continued Professional Development",
+      "item3Placeholder": "Post-graduate training & advanced clinical certifications"
+    },
+    "appointment": {
+      "eyebrow": "Schedule a Visit",
+      "title": "Consult with our clinician.",
+      "description": "Take the first step toward a healthier, more confident smile in a calm and welcoming setting.",
+      "primaryAction": "Request a consultation",
+      "secondaryAction": "View treatments"
+    }
+  },
+  "Results": {
+    "metadata": {
+      "title": "Results & Smile Gallery",
+      "description": "Explore the clinical case framework at Bright Way Dental Clinic — committed to transparent, authentic documentation of patient outcomes."
+    },
+    "hero": {
+      "eyebrow": "Clinical Outcomes",
+      "title": "Documented with integrity and clinical transparency.",
+      "description": "We believe in honest, authentic presentation of clinical outcomes. This framework illustrates how verified patient treatments will be documented once approved clinical photography is published."
+    },
+    "integrity": {
+      "eyebrow": "Our Standards",
+      "title": "Why authentic documentation matters.",
+      "description": "Modern dental care deserves honest representation, free from exaggerated filters, unrealistic stock images, or fabricated claims.",
+      "principle1Title": "Real Clinical Cases",
+      "principle1Body": "All future case documentation will represent genuine, unretouched clinical treatments performed at Bright Way.",
+      "principle2Title": "Patient Consent & Privacy",
+      "principle2Body": "Case photography is displayed only with explicit, informed consent, respecting patient privacy at every step.",
+      "principle3Title": "Individualised Outcomes",
+      "principle3Body": "Every smile is unique. Case studies are presented as examples of individual care, not generic guarantees."
+    },
+    "galleryFramework": {
+      "eyebrow": "Case Documentation Framework",
+      "title": "Structured Clinical Categories",
+      "description": "The following framework illustrates the structured presentation of clinical cases across our core treatment disciplines.",
+      "statusBadge": "Framework Preview · Verified Patient Cases Pending",
+      "case1": {
+        "category": "Cosmetic Alignment & Bonding",
+        "title": "Anterior Aesthetic Harmony",
+        "treatment": "Cosmetic Dentistry & Composite Artistry",
+        "beforeLabel": "Initial Clinical Presentation",
+        "afterLabel": "Completed Restoration",
+        "placeholderText": "Verified clinical photography will be published here upon clinic review.",
+        "description": "Structured case format illustrating conservative enhancement of tooth shape, proportion, and natural contour.",
+        "note": "Case note: Outcomes are tailored to individual facial aesthetics and dental anatomy."
+      },
+      "case2": {
+        "category": "Restorative Implant Care",
+        "title": "Single Tooth Replacement",
+        "treatment": "Dental Implants & Custom Crown",
+        "beforeLabel": "Pre-treatment Assessment",
+        "afterLabel": "Final Crown Placement",
+        "placeholderText": "Verified clinical photography will be published here upon clinic review.",
+        "description": "Structured case format detailing precision implant placement and harmonious tissue integration.",
+        "note": "Case note: Treatment timelines vary depending on bone structure and healing rates."
+      },
+      "case3": {
+        "category": "Shade Refinement",
+        "title": "Supervised Shade Enhancement",
+        "treatment": "Professional Teeth Whitening",
+        "beforeLabel": "Baseline Shade Assessment",
+        "afterLabel": "Post-treatment Result",
+        "placeholderText": "Verified clinical photography will be published here upon clinic review.",
+        "description": "Structured case format documenting gentle, supervised whitening with careful enamel preservation.",
+        "note": "Case note: Shade improvements depend on baseline tooth enamel characteristics."
+      }
+    },
+    "consultation": {
+      "eyebrow": "Your Personal Assessment",
+      "title": "Every smile begins with a conversation.",
+      "description": "Because every clinical situation is distinct, we recommend scheduling an in-person consultation to evaluate your specific goals and options.",
+      "primaryAction": "Request a consultation",
+      "secondaryAction": "Explore all treatments"
+    }
+  },
+  "FaqPage": {
+    "metadata": {
+      "title": "Frequently Asked Questions",
+      "description": "Find clear answers to common questions regarding dental consultations, treatments, comfort, scheduling, and clinic visits at Bright Way Dental Clinic."
+    },
+    "hero": {
+      "eyebrow": "Patient Guidance",
+      "title": "Clear answers to your questions.",
+      "description": "We believe informed patients make the most confident decisions. Explore answers to commonly asked questions about our clinic, consultations, and treatments."
+    },
+    "categories": {
+      "firstVisit": {
+        "eyebrow": "01 · First Visit",
+        "title": "Consultations & Initial Visits",
+        "description": "What to expect when visiting Bright Way for the first time.",
+        "items": {
+          "whatHappens": {
+            "question": "What happens during my initial consultation?",
+            "answer": "Your first visit is dedicated to understanding your oral health and personal goals. We conduct a gentle, thorough examination, review any relevant dental history, take diagnostic imaging if appropriate, and discuss our findings with you in plain language. There is never any pressure to proceed with treatment on the day."
+          },
+          "duration": {
+            "question": "How long does a consultation usually take?",
+            "answer": "We allocate generous appointment times — typically 45 to 60 minutes — so you have plenty of time to discuss your thoughts, ask questions, and understand all available treatment paths without feeling rushed."
+          },
+          "whatToBring": {
+            "question": "What should I bring to my first appointment?",
+            "answer": "Please bring a valid photo ID, details of any current medications or medical conditions, and previous dental records or X-rays if readily available. You will also have the opportunity to share your preferences and questions with our team."
+          }
+        }
+      },
+      "appointments": {
+        "eyebrow": "02 · Scheduling",
+        "title": "Appointments & Booking",
+        "description": "How to schedule, reschedule, and manage your visits.",
+        "items": {
+          "howToBook": {
+            "question": "How can I request an appointment?",
+            "answer": "You can submit an appointment request through our online contact form, or contact the clinic directly once phone and messaging details are officially confirmed. Our team will reach out to confirm a time that suits your schedule."
+          },
+          "rescheduling": {
+            "question": "What is the procedure if I need to reschedule?",
+            "answer": "We understand schedules change. We kindly request advance notice whenever possible so we can offer that appointment time to another patient and help you find a new suitable time."
+          },
+          "confirmation": {
+            "question": "How will my appointment request be confirmed?",
+            "answer": "After submitting your request, our front desk team will contact you via your preferred communication method to confirm appointment availability and provide any preparatory details."
+          }
+        }
+      },
+      "comfort": {
+        "eyebrow": "03 · Patient Comfort",
+        "title": "Comfort & Dental Anxiety",
+        "description": "How we create a calm, supportive environment for apprehensive patients.",
+        "items": {
+          "anxiousPatients": {
+            "question": "I experience dental anxiety. How can Bright Way help?",
+            "answer": "You are not alone; many patients feel uneasy about dental visits. We intentionally design our practice around gentle pacing, clear explanations before each step, and patient-guided pauses whenever you need a break."
+          },
+          "painManagement": {
+            "question": "Will my dental treatment be painful?",
+            "answer": "Modern clinical techniques and gentle anaesthetic administration ensure that procedures are remarkably comfortable. We continually check on your comfort throughout treatment and adjust as needed."
+          },
+          "calmingSetting": {
+            "question": "What makes the clinic environment different?",
+            "answer": "We have created a warm, serene setting that feels distinctly different from traditional sterile clinics. From natural tones to quiet treatment rooms, every detail helps put you at ease."
+          }
+        }
+      },
+      "treatments": {
+        "eyebrow": "04 · Treatment Planning",
+        "title": "Treatments & Personalized Plans",
+        "description": "Understanding how we plan and deliver your dental care.",
+        "items": {
+          "customPlans": {
+            "question": "How are treatment plans created?",
+            "answer": "Following your examination, we prepare a personalized treatment plan outlining recommended steps, expected timelines, and alternative options. We review this together so you can make informed choices."
+          },
+          "multipleVisits": {
+            "question": "Will I need multiple appointments for advanced treatments?",
+            "answer": "Certain procedures, such as dental implants, orthodontics, or complex restorative work, are structured across staged appointments to ensure optimal clinical outcomes and proper healing."
+          },
+          "secondOpinions": {
+            "question": "Can I visit Bright Way for a second opinion?",
+            "answer": "Yes. We regularly welcome patients seeking an independent, objective clinical assessment of their dental health and treatment alternatives."
+          }
+        }
+      },
+      "emergency": {
+        "eyebrow": "05 · Urgent Care",
+        "title": "Emergencies & Urgent Concerns",
+        "description": "Guidance on handling sudden discomfort or dental injuries.",
+        "items": {
+          "emergencyDefinition": {
+            "question": "What qualifies as a dental emergency?",
+            "answer": "Severe toothache, trauma resulting in a fractured or knocked-out tooth, acute swelling, or persistent bleeding are urgent concerns that warrant immediate professional attention."
+          },
+          "whatToDoFirst": {
+            "question": "What should I do immediately if a tooth is knocked out?",
+            "answer": "Hold the tooth by the crown (never the root), rinse gently with water if dirty without scrubbing, and place it in a container of cold milk or saliva. Contact emergency dental care immediately, as prompt action within the first hour greatly improves preservation."
+          },
+          "urgentContact": {
+            "question": "How do I reach the clinic for urgent care?",
+            "answer": "In urgent situations, please reach out via our direct telephone line once published. For severe facial trauma, difficulty breathing, or uncontrollable bleeding, visit the nearest hospital emergency department."
+          }
+        }
+      },
+      "fees": {
+        "eyebrow": "06 · Financial Clarity",
+        "title": "Fees, Estimates & Insurance",
+        "description": "Responsible information regarding treatment costs and coverage.",
+        "items": {
+          "costEstimates": {
+            "question": "How will I know the cost of my treatment?",
+            "answer": "We provide transparent cost estimates following your clinical consultation, before any non-emergency treatment commences, ensuring you have complete clarity on fees."
+          },
+          "insuranceAccepted": {
+            "question": "Do you work with insurance providers?",
+            "answer": "Insurance network participation and direct billing arrangements will be detailed once the clinic's formal provider agreements are finalized. We are always happy to provide itemized receipts for reimbursement claims."
+          },
+          "paymentMethods": {
+            "question": "What payment methods are accepted?",
+            "answer": "Accepted payment methods, including major credit/debit cards and electronic payments, will be confirmed upon clinic opening."
+          }
+        }
+      }
+    },
+    "contactCta": {
+      "eyebrow": "Still Have Questions?",
+      "title": "We are here to assist you.",
+      "description": "If you have a specific inquiry or wish to discuss your dental needs directly with our team, please get in touch.",
+      "primaryAction": "Send an inquiry",
+      "secondaryAction": "Explore treatments"
+    }
+  },
+  "Contact": {
+    "metadata": {
+      "title": "Contact & Appointments",
+      "description": "Request a consultation or contact Bright Way Dental Clinic. We welcome your inquiries and look forward to assisting you."
+    },
+    "hero": {
+      "eyebrow": "Get in Touch",
+      "title": "Begin your conversation with Bright Way.",
+      "description": "Whether you wish to schedule an unhurried consultation, inquire about a specific treatment, or simply ask a question, our team is at your service."
+    },
+    "form": {
+      "eyebrow": "Appointment Request",
+      "title": "Request a Consultation",
+      "description": "Please share your preferred details below. Our clinic team will reach out to confirm available appointment slots.",
+      "fullNameLabel": "Full Name",
+      "fullNamePlaceholder": "e.g. Eleanor Vance",
+      "phoneLabel": "Phone Number",
+      "phonePlaceholder": "e.g. +971 50 123 4567",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "e.g. eleanor@example.com",
+      "treatmentLabel": "Reason for Visit / Treatment",
+      "treatmentPlaceholder": "Select a treatment or inquiry",
+      "treatments": {
+        "general": "General Dentistry & Check-up",
+        "cosmetic": "Cosmetic Dentistry & Aesthetic Consultation",
+        "implants": "Dental Implants Consultation",
+        "orthodontics": "Orthodontics & Teeth Alignment",
+        "whitening": "Teeth Whitening",
+        "rootCanal": "Root Canal Treatment / Tooth Pain",
+        "pediatric": "Pediatric Dental Care",
+        "emergency": "Urgent / Emergency Concern",
+        "other": "Other Consultation / General Inquiry"
+      },
+      "preferredDateLabel": "Preferred Date",
+      "preferredTimeLabel": "Preferred Time of Day",
+      "preferredTimeOptions": {
+        "any": "Any time of day",
+        "morning": "Morning (09:00 - 13:00)",
+        "afternoon": "Afternoon (13:00 - 17:00)",
+        "evening": "Evening (17:00 - 20:00)"
+      },
+      "messageLabel": "Additional Notes or Questions (Optional)",
+      "messagePlaceholder": "Tell us about any specific preferences, questions, or dental concerns...",
+      "submitButton": "Submit Consultation Request",
+      "submittingButton": "Sending Request...",
+      "disclaimer": "Note: Submitting this form sends an appointment request. Our reception team will contact you directly to confirm the exact date and time.",
+      "successTitle": "Request Received",
+      "successMessage": "Thank you for reaching out. Your consultation request has been received. Our clinic team will contact you shortly to confirm your appointment time.",
+      "resetButton": "Submit Another Request"
+    },
+    "clinicInfo": {
+      "eyebrow": "Clinic Information",
+      "title": "Visit or Reach Us",
+      "description": "Practical details for visiting Bright Way Dental Clinic. Verified contact numbers and location details will be finalized soon.",
+      "addressLabel": "Clinic Location",
+      "addressPlaceholder": "Official clinic address will be published upon clinic launch.",
+      "hoursLabel": "Opening Hours",
+      "hoursPlaceholder": "Consultation hours will be confirmed upon clinic launch.",
+      "phoneLabel": "Telephone",
+      "phonePlaceholder": "Direct telephone line will be published upon confirmation.",
+      "emailLabel": "Email Inquiries",
+      "emailPlaceholder": "Official email address will be published upon confirmation.",
+      "whatsappLabel": "WhatsApp Messaging",
+      "whatsappPlaceholder": "WhatsApp channel will be connected upon confirmation.",
+      "directionsLabel": "Location Map",
+      "mapPlaceholder": "Interactive location map will be embedded once physical premises are finalized."
+    }
+  },
+  "Privacy": {
+    "metadata": {
+      "title": "Privacy Policy",
+      "description": "Read the privacy framework and data protection considerations for Bright Way Dental Clinic."
+    },
+    "hero": {
+      "eyebrow": "Legal & Privacy",
+      "title": "Privacy Policy & Data Considerations",
+      "lastUpdated": "Draft Framework · Milestone 05",
+      "draftNotice": "This document represents a provisional privacy framework for the demo website. Final legal and healthcare data processing policies will be established prior to full production launch."
+    },
+    "sections": {
+      "intro": {
+        "title": "1. Commitment to Patient Privacy",
+        "body": "Bright Way Dental Clinic is dedicated to maintaining the confidentiality, integrity, and security of all personal and medical information entrusted to us. We handle all inquiries and clinical information with the highest standard of professional care."
+      },
+      "collection": {
+        "title": "2. Information We Collect",
+        "body": "When you interact with our website — such as when submitting an appointment request or general inquiry form — we may collect your name, email address, telephone number, preferred appointment timing, and any clinical notes you choose to provide."
+      },
+      "usage": {
+        "title": "3. How Information is Used",
+        "body": "Information submitted through our website is used strictly to respond to your inquiries, schedule and confirm clinical consultations, and provide relevant information regarding dental services. We do not sell, rent, or trade personal information to third parties."
+      },
+      "cookies": {
+        "title": "4. Cookies and Web Analytics",
+        "body": "Our website may utilize essential cookies and privacy-respecting analytics to ensure proper site functionality, remember language preferences (English and Arabic), and analyze general website traffic patterns to improve user experience."
+      },
+      "thirdParty": {
+        "title": "5. Third-Party Services",
+        "body": "Where third-party platforms are utilized (such as mapping services or future secure booking platforms), their handling of information is governed by their respective privacy policies in compliance with applicable data protection laws."
+      },
+      "rights": {
+        "title": "6. Your Rights and Inquiries",
+        "body": "You have the right to request clarification regarding the information we hold about you, request corrections, or request deletion of inquiry records, subject to statutory healthcare record retention obligations."
+      },
+      "contact": {
+        "title": "7. Contact Regarding Privacy",
+        "body": "If you have questions regarding this privacy framework or data considerations, please reach out via our contact page. Verified clinic data protection contact details will be published upon final launch."
       }
     }
   },

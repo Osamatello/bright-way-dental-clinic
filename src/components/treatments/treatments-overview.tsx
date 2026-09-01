@@ -60,7 +60,7 @@ export async function TreatmentsOverview({ locale }: TreatmentsOverviewProps) {
           </div>
 
           <div className="mt-14">
-            <ButtonLink href={`/${locale}#appointment`}>
+            <ButtonLink href={`/${locale}`}>
               {t("backToHome")}
             </ButtonLink>
           </div>

@@ -39,17 +39,20 @@ export async function SiteFooter({ locale }: SiteFooterProps) {
               <Link className="w-fit hover:text-white" href={`/${locale}/treatments`}>
                 {nav("treatments")}
               </Link>
-              <Link className="w-fit hover:text-white" href={`/${locale}/#about`}>
+              <Link className="w-fit hover:text-white" href={`/${locale}/about`}>
                 {nav("about")}
               </Link>
-              <Link className="w-fit hover:text-white" href={`/${locale}/#doctor`}>
+              <Link className="w-fit hover:text-white" href={`/${locale}/doctor`}>
                 {nav("doctor")}
               </Link>
-              <Link className="w-fit hover:text-white" href={`/${locale}/#faq`}>
+              <Link className="w-fit hover:text-white" href={`/${locale}/results`}>
+                {nav("results")}
+              </Link>
+              <Link className="w-fit hover:text-white" href={`/${locale}/faq`}>
                 {nav("faq")}
               </Link>
-              <Link className="w-fit hover:text-white" href={`/${locale}/#contact-section`}>
-                {nav("experience")}
+              <Link className="w-fit hover:text-white" href={`/${locale}/contact`}>
+                {nav("contact")}
               </Link>
             </div>
           </div>
@@ -66,7 +69,7 @@ export async function SiteFooter({ locale }: SiteFooterProps) {
 
         <div className="flex flex-col gap-4 pt-7 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {footer("rights")}</p>
-          <Link className="w-fit hover:text-white" href={`/${locale}/#privacy`}>
+          <Link className="w-fit hover:text-white" href={`/${locale}/privacy`}>
             {footer("privacy")}
           </Link>
         </div>

@@ -47,7 +47,7 @@ export async function DoctorPreview({ locale }: DoctorPreviewProps) {
           </p>
           <ButtonLink
             className="mt-9"
-            href={`/${locale}/#appointment`}
+            href={`/${locale}/doctor`}
             variant="secondary"
           >
             {t("action")}

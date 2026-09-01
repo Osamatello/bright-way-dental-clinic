@@ -19,10 +19,11 @@ export async function SiteHeader({ locale }: SiteHeaderProps) {
 
   const items = [
     { href: `/${locale}/treatments`, label: t("treatments") },
-    { href: `/${locale}/#about`, label: t("about") },
-    { href: `/${locale}/#doctor`, label: t("doctor") },
-    { href: `/${locale}/#experience`, label: t("experience") },
-    { href: `/${locale}/#faq`, label: t("faq") },
+    { href: `/${locale}/about`, label: t("about") },
+    { href: `/${locale}/doctor`, label: t("doctor") },
+    { href: `/${locale}/results`, label: t("results") },
+    { href: `/${locale}/faq`, label: t("faq") },
+    { href: `/${locale}/contact`, label: t("contact") },
   ];
 
   return (
@@ -49,7 +50,7 @@ export async function SiteHeader({ locale }: SiteHeaderProps) {
           <LocaleSwitcher locale={locale} />
           <Link
             className="inline-flex min-h-11 items-center justify-center bg-navy px-5 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-white transition-colors hover:bg-sand hover:text-navy"
-            href={`/${locale}/#appointment`}
+            href={`/${locale}/contact`}
           >
             {t("book")}
           </Link>
