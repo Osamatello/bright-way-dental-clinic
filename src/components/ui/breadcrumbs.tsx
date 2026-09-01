@@ -5,7 +5,7 @@ import { JsonLd } from "../seo/json-ld";
 
 export type BreadcrumbEntry = {
   label: string;
-  path?: string; // If omitted, treated as the current active page
+  path?: string;
 };
 
 type BreadcrumbsProps = {
@@ -30,12 +30,15 @@ export function Breadcrumbs({
     ...items,
   ];
 
-  // Prepare data for JSON-LD schema
-  const schemaItems = allItems.map((item) => ({
-    name: item.label,
-    path: item.path ?? "",
-  }));
-  const breadcrumbSchema = buildBreadcrumbSchema(locale, schemaItems);
+  const hasCompleteSchemaPaths = allItems.every(
+    (item) => typeof item.path === "string"
+  );
+  const breadcrumbSchema = hasCompleteSchemaPaths
+    ? buildBreadcrumbSchema(
+        locale,
+        allItems.map((item) => ({ name: item.label, path: item.path as string }))
+      )
+    : null;
 
   return (
     <>
@@ -44,10 +47,13 @@ export function Breadcrumbs({
         <ol className="flex flex-wrap items-center gap-2 text-[0.68rem] font-medium tracking-[0.08em] text-slate">
           {allItems.map((item, index) => {
             const isLast = index === allItems.length - 1;
-            const href = item.path === "" ? `/${locale}` : `/${locale}/${item.path?.replace(/^\/+/, "")}`;
+            const href =
+              item.path === ""
+                ? `/${locale}`
+                : `/${locale}/${item.path?.replace(/^\/+/, "")}`;
 
             return (
-              <li className="inline-flex items-center gap-2" key={index}>
+              <li className="inline-flex items-center gap-2" key={`${item.label}-${index}`}>
                 {index > 0 && (
                   <span
                     aria-hidden="true"
@@ -57,17 +63,11 @@ export function Breadcrumbs({
                   </span>
                 )}
                 {isLast || !item.path ? (
-                  <span
-                    aria-current="page"
-                    className="font-semibold text-navy"
-                  >
+                  <span aria-current="page" className="font-semibold text-navy">
                     {item.label}
                   </span>
                 ) : (
-                  <Link
-                    className="transition-colors hover:text-navy"
-                    href={href}
-                  >
+                  <Link className="transition-colors hover:text-navy" href={href}>
                     {item.label}
                   </Link>
                 )}
