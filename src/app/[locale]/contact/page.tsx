@@ -41,7 +41,7 @@ export default async function ContactPageRoute({ params }: ContactPageProps) {
     <>
       <div className="bg-cream">
         <div className="site-container">
-          <Breadcrumbs locale={appLocale} items={[{ label: t("title") }]} />
+          <Breadcrumbs locale={appLocale} items={[{ label: t("title"), path: "contact" }]} />
         </div>
       </div>
       <ContactContent locale={appLocale} />
