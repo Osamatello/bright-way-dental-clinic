@@ -41,7 +41,7 @@ export default async function DoctorPageRoute({ params }: DoctorPageProps) {
     <>
       <div className="bg-cream">
         <div className="site-container">
-          <Breadcrumbs locale={appLocale} items={[{ label: t("title") }]} />
+          <Breadcrumbs locale={appLocale} items={[{ label: t("title"), path: "doctor" }]} />
         </div>
       </div>
       <DoctorContent locale={appLocale} />
