@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { TreatmentsOverview } from "@/components/treatments/treatments-overview";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -36,6 +37,17 @@ export default async function TreatmentsPage({ params }: TreatmentsPageProps) {
   if (!hasLocale(routing.locales, locale)) notFound();
 
   setRequestLocale(locale);
+  const appLocale = locale as AppLocale;
+  const t = await getTranslations({ locale, namespace: "Treatments.overview" });
 
-  return <TreatmentsOverview locale={locale as AppLocale} />;
+  return (
+    <>
+      <div className="bg-cream">
+        <div className="site-container">
+          <Breadcrumbs locale={appLocale} items={[{ label: t("eyebrow") }]} />
+        </div>
+      </div>
+      <TreatmentsOverview locale={appLocale} />
+    </>
+  );
 }
