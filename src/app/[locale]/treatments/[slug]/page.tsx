@@ -74,7 +74,7 @@ export default async function TreatmentDetailPage({
             locale={appLocale}
             items={[
               { label: overviewT("eyebrow"), path: "treatments" },
-              { label: title },
+              { label: title, path: `treatments/${treatment.slug}` },
             ]}
           />
         </div>
