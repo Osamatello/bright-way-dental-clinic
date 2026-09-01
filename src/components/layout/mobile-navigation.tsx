@@ -70,7 +70,7 @@ export function MobileNavigation({
 
       <div
         aria-hidden={!isOpen}
-        className={`fixed inset-x-0 bottom-0 top-[77px] z-40 overflow-y-auto bg-ivory transition-[opacity,visibility] duration-300 ${
+        className={`fixed inset-x-0 bottom-0 top-[79px] z-40 overflow-y-auto bg-ivory/98 backdrop-blur-xl transition-[opacity,visibility] duration-300 ${
           isOpen ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >
@@ -97,7 +97,7 @@ export function MobileNavigation({
           <div className="mt-auto flex items-center justify-between gap-3 border-t border-navy/10 pt-6">
             <LocaleSwitcher locale={locale} />
             <Link
-              className="inline-flex min-h-12 flex-1 items-center justify-center gap-3 bg-navy px-5 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-white"
+              className="inline-flex min-h-12 flex-1 items-center justify-center gap-3 rounded-full bg-navy px-5 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-white shadow-[0_12px_30px_rgba(21,36,53,0.14)]"
               href={`/${locale}/contact`}
               onClick={() => setIsOpen(false)}
             >

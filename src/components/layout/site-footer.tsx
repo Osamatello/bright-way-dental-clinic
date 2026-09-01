@@ -19,16 +19,23 @@ export async function SiteFooter({ locale }: SiteFooterProps) {
   return (
     <footer className="bg-navy text-white">
       <div className="site-container py-14 sm:py-20">
-        <div className="grid gap-12 border-b border-white/15 pb-14 md:grid-cols-[1.4fr_0.8fr_0.8fr]">
+        <div className="mb-14 grid gap-8 border-b border-white/15 pb-14 lg:grid-cols-[1fr_auto] lg:items-end">
+          <h2 className="display-heading max-w-3xl text-4xl leading-[1.05] text-white sm:text-6xl">
+            {footer("description")}
+          </h2>
+          <Link className="group inline-flex min-h-14 items-center justify-center gap-5 rounded-full bg-white px-8 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-navy transition-transform hover:-translate-y-0.5" href={`/${locale}/contact`}>
+            {nav("book")} <span aria-hidden="true" className="text-gold transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1">↗</span>
+          </Link>
+        </div>
+
+        <div className="grid gap-12 border-b border-white/15 pb-14 md:grid-cols-[1.25fr_0.75fr_0.75fr]">
           <div>
             <BrandMark
               inverse
               locale={locale}
               clinicLabel={brand("clinic")}
             />
-            <p className="mt-8 max-w-sm text-sm leading-7 text-white/60">
-              {footer("description")}
-            </p>
+            <div aria-hidden="true" className="mt-8 h-px w-20 bg-gold-light/70" />
           </div>
 
           <div>
@@ -36,24 +43,18 @@ export async function SiteFooter({ locale }: SiteFooterProps) {
               {footer("explore")}
             </p>
             <div className="mt-5 flex flex-col gap-3 text-sm text-white/75">
-              <Link className="w-fit hover:text-white" href={`/${locale}/treatments`}>
+              <Link className="w-fit transition-colors hover:text-gold-light" href={`/${locale}/treatments`}>
                 {nav("treatments")}
               </Link>
-              <Link className="w-fit hover:text-white" href={`/${locale}/about`}>
+              <Link className="w-fit transition-colors hover:text-gold-light" href={`/${locale}/about`}>
                 {nav("about")}
               </Link>
-              <Link className="w-fit hover:text-white" href={`/${locale}/doctor`}>
+              <Link className="w-fit transition-colors hover:text-gold-light" href={`/${locale}/doctor`}>
                 {nav("doctor")}
               </Link>
-              <Link className="w-fit hover:text-white" href={`/${locale}/results`}>
-                {nav("results")}
-              </Link>
-              <Link className="w-fit hover:text-white" href={`/${locale}/faq`}>
-                {nav("faq")}
-              </Link>
-              <Link className="w-fit hover:text-white" href={`/${locale}/contact`}>
-                {nav("contact")}
-              </Link>
+              <Link className="w-fit transition-colors hover:text-gold-light" href={`/${locale}/results`}>{nav("results")}</Link>
+              <Link className="w-fit transition-colors hover:text-gold-light" href={`/${locale}/faq`}>{nav("faq")}</Link>
+              <Link className="w-fit transition-colors hover:text-gold-light" href={`/${locale}/contact`}>{nav("contact")}</Link>
             </div>
           </div>
 
