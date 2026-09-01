@@ -6,7 +6,9 @@ import { notFound } from "next/navigation";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { JsonLd } from "@/components/seo/json-ld";
 import { routing, type AppLocale } from "@/i18n/routing";
+import { buildClinicSchema, buildWebSiteSchema } from "@/lib/schema";
 import { getBaseUrl, getCanonicalUrl, getLanguageAlternates, siteConfig } from "@/lib/seo";
 
 import "../globals.css";
@@ -122,6 +124,10 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
   const messages = await getMessages();
   const appLocale = locale as AppLocale;
+  const globalSchema = [
+    buildClinicSchema(appLocale),
+    buildWebSiteSchema(appLocale),
+  ];
 
   return (
     <html
@@ -130,6 +136,7 @@ export default async function LocaleLayout({
       lang={locale}
     >
       <body>
+        <JsonLd data={globalSchema} />
         <NextIntlClientProvider messages={messages}>
           <SiteHeader locale={appLocale} />
           <main>{children}</main>
