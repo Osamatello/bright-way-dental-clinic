@@ -49,7 +49,7 @@ export function MobileNavigation({
       <button
         aria-expanded={isOpen}
         aria-label={isOpen ? closeLabel : menuLabel}
-        className="grid size-11 place-items-center border border-navy/20"
+        className="grid size-11 place-items-center rounded-full border border-navy/15 bg-white/55 shadow-[0_8px_28px_rgba(21,36,53,0.06)] transition-colors hover:border-gold/70"
         onClick={() => setIsOpen((open) => !open)}
         type="button"
       >
@@ -70,34 +70,38 @@ export function MobileNavigation({
 
       <div
         aria-hidden={!isOpen}
-        className={`fixed inset-x-0 bottom-0 top-[73px] z-40 bg-cream transition-[opacity,visibility] duration-300 ${
+        className={`fixed inset-x-0 bottom-0 top-[77px] z-40 overflow-y-auto bg-ivory transition-[opacity,visibility] duration-300 ${
           isOpen ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >
-        <nav className="site-container flex h-full flex-col py-10" aria-label={menuLabel}>
-          <div className="flex flex-col border-t border-navy/15">
+        <nav className="site-container flex min-h-full flex-col py-8" aria-label={menuLabel}>
+          <div className="mb-7 flex items-center gap-3 text-[0.61rem] font-semibold uppercase tracking-[0.2em] text-gold">
+            <span className="h-px w-8 bg-gold/70" aria-hidden="true" />
+            Bright Way
+          </div>
+          <div className="flex flex-col border-t border-navy/12">
             {items.map((item, index) => (
               <Link
-                className="display-heading flex items-center justify-between border-b border-navy/15 py-5 text-3xl"
+                className="display-heading group flex items-center justify-between border-b border-navy/12 py-5 text-[2rem] text-navy"
                 href={item.href}
                 key={item.label}
                 onClick={() => setIsOpen(false)}
               >
                 <span>{item.label}</span>
-                <span className="font-sans text-xs text-slate">
+                <span className="grid size-8 place-items-center rounded-full border border-navy/15 font-sans text-[0.58rem] text-slate transition-colors group-hover:border-gold/60 group-hover:text-gold">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </Link>
             ))}
           </div>
-          <div className="mt-auto flex items-center justify-between gap-4 pt-8">
+          <div className="mt-auto flex items-center justify-between gap-3 border-t border-navy/10 pt-6">
             <LocaleSwitcher locale={locale} />
             <Link
-              className="inline-flex min-h-12 flex-1 items-center justify-center bg-navy px-5 text-xs font-semibold uppercase tracking-[0.13em] text-white"
+              className="inline-flex min-h-12 flex-1 items-center justify-center gap-3 bg-navy px-5 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-white"
               href={`/${locale}/contact`}
               onClick={() => setIsOpen(false)}
             >
-              {bookLabel}
+              {bookLabel} <span aria-hidden="true" className="text-gold">↗</span>
             </Link>
           </div>
         </nav>

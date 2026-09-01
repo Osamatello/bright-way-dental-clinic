@@ -27,17 +27,17 @@ export async function SiteHeader({ locale }: SiteHeaderProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-navy/10 bg-ivory">
-      <div className="site-container flex h-[72px] items-center justify-between gap-8">
+    <header className="sticky top-0 z-50 border-b border-navy/8 bg-ivory/95 shadow-[0_1px_0_rgba(21,36,53,0.025)] backdrop-blur-xl">
+      <div className="site-container grid h-[76px] grid-cols-[1fr_auto] items-center gap-5 lg:h-[88px] lg:grid-cols-[auto_1fr_auto] lg:gap-10">
         <BrandMark locale={locale} clinicLabel={brand("clinic")} />
 
         <nav
           aria-label={t("menu")}
-          className="hidden items-center gap-6 lg:flex xl:gap-8"
+          className="hidden items-center justify-center gap-7 lg:flex xl:gap-10"
         >
           {items.map((item) => (
             <Link
-              className="relative py-2 text-[0.69rem] font-semibold uppercase tracking-[0.13em] text-navy/75 transition-colors after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-left after:scale-x-0 after:bg-navy after:transition-transform hover:text-navy hover:after:scale-x-100"
+              className="relative py-3 text-[0.67rem] font-semibold uppercase tracking-[0.15em] text-navy/68 transition-colors duration-300 after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:text-navy hover:after:scale-x-100 rtl:after:origin-right"
               href={item.href}
               key={item.label}
             >
@@ -49,10 +49,11 @@ export async function SiteHeader({ locale }: SiteHeaderProps) {
         <div className="hidden items-center gap-3 lg:flex">
           <LocaleSwitcher locale={locale} />
           <Link
-            className="inline-flex min-h-11 items-center justify-center bg-navy px-5 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-white transition-colors hover:bg-sand hover:text-navy"
+            className="group inline-flex min-h-12 items-center justify-center gap-4 bg-navy px-6 text-[0.67rem] font-semibold uppercase tracking-[0.14em] text-white transition-[background-color,transform] duration-300 hover:-translate-y-px hover:bg-navy/92"
             href={`/${locale}/contact`}
           >
-            {t("book")}
+            <span>{t("book")}</span>
+            <span aria-hidden="true" className="text-gold transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1">↗</span>
           </Link>
         </div>
 

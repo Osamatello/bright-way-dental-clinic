@@ -66,7 +66,10 @@
       "secondaryAction": "شاهد العلاجات",
       "imageAlt": "تصميم داخلي دافئ وحديث لعيادة أسنان خاصة",
       "imageCaption": "أجواء أكثر هدوءاً لعناية مدروسة",
-      "scrollLabel": "اكتشف برايت واي"
+      "scrollLabel": "اكتشف برايت واي",
+      "valueOne": "تواصل واضح",
+      "valueTwo": "علاج مدروس",
+      "valueThree": "أجواء هادئة"
     },
     "treatments": {
       "eyebrow": "العلاجات",
