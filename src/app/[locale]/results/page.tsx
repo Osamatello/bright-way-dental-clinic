@@ -41,7 +41,7 @@ export default async function ResultsPageRoute({ params }: ResultsPageProps) {
     <>
       <div className="bg-cream">
         <div className="site-container">
-          <Breadcrumbs locale={appLocale} items={[{ label: t("title") }]} />
+          <Breadcrumbs locale={appLocale} items={[{ label: t("title"), path: "results" }]} />
         </div>
       </div>
       <ResultsContent locale={appLocale} />
