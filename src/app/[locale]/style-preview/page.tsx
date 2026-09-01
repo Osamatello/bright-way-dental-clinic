@@ -8,6 +8,11 @@ import { routing, type AppLocale } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   title: "Design Foundation",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
 };
 
 type StylePreviewPageProps = {
