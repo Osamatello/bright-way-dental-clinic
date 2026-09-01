@@ -3,9 +3,9 @@ import type { TreatmentSlug } from "@/data/treatments";
 import { getBaseUrl, getCanonicalUrl, siteConfig } from "./seo";
 
 /**
- * Builds the truthful Dentist / Organization schema.
- * Missing NAP (phone, address, geo, opening hours, ratings) is intentionally omitted
- * until official verified clinic details are provided.
+ * Builds a conservative clinic entity using only verified data currently available.
+ * LocalBusiness/Dentist-specific fields such as address, phone, geo coordinates,
+ * opening hours, ratings, and area served are intentionally omitted until verified.
  */
 export function buildClinicSchema(locale: AppLocale) {
   const clinicName = siteConfig.name[locale] || siteConfig.name.en;
@@ -14,17 +14,16 @@ export function buildClinicSchema(locale: AppLocale) {
 
   return {
     "@context": "https://schema.org",
-    "@type": "Dentist",
-    "@id": `${canonical}#clinic`,
+    "@type": "Organization",
+    "@id": `${canonical}#organization`,
     name: clinicName,
     url: canonical,
     image: `${baseUrl}/images/bright-way-clinic-hero.webp`,
-    inLanguage: locale === "ar" ? "ar" : "en",
   };
 }
 
 /**
- * Builds the WebSite entity schema.
+ * Builds the WebSite entity schema without claiming unsupported search features.
  */
 export function buildWebSiteSchema(locale: AppLocale) {
   const siteName = siteConfig.name[locale] || siteConfig.name.en;
@@ -33,10 +32,10 @@ export function buildWebSiteSchema(locale: AppLocale) {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${getCanonicalUrl(locale)}#website`,
+    "@id": `${canonical}#website`,
     name: siteName,
     url: canonical,
-    inLanguage: locale === "ar" ? "ar" : "en",
+    inLanguage: locale,
   };
 }
 
@@ -46,9 +45,11 @@ export type BreadcrumbItem = {
 };
 
 /**
- * Builds BreadcrumbList structured data for visible breadcrumb trails.
+ * Builds BreadcrumbList structured data from the same items used for visible breadcrumbs.
  */
 export function buildBreadcrumbSchema(locale: AppLocale, items: BreadcrumbItem[]) {
+  if (!items.length) return null;
+
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -62,17 +63,9 @@ export function buildBreadcrumbSchema(locale: AppLocale, items: BreadcrumbItem[]
 }
 
 /**
- * Treatments that genuinely represent an invasive / clinical medical procedure
- * vs general consultative or maintenance dental services.
- */
-const medicalProcedureSlugs: TreatmentSlug[] = [
-  "root-canal-treatment",
-  "dental-implants",
-];
-
-/**
- * Builds truthful Treatment Service / MedicalProcedure schema.
- * Reuses visible treatment data without fabricating pricing, outcome statistics, or insurance claims.
+ * Uses Service as the safe baseline for every treatment page.
+ * We intentionally avoid MedicalProcedure classifications until each treatment's
+ * clinical categorization has been reviewed and approved with verified clinic content.
  */
 export function buildTreatmentSchema(
   locale: AppLocale,
@@ -82,24 +75,7 @@ export function buildTreatmentSchema(
 ) {
   const canonical = getCanonicalUrl(locale, `treatments/${slug}`);
   const clinicName = siteConfig.name[locale] || siteConfig.name.en;
-  const isProcedure = medicalProcedureSlugs.includes(slug);
-
-  if (isProcedure) {
-    return {
-      "@context": "https://schema.org",
-      "@type": "MedicalProcedure",
-      "@id": `${canonical}#procedure`,
-      name: title,
-      description,
-      url: canonical,
-      procedureType: "NonSurgicalProcedure",
-      provider: {
-        "@type": "Dentist",
-        name: clinicName,
-        url: getCanonicalUrl(locale),
-      },
-    };
-  }
+  const clinicUrl = getCanonicalUrl(locale);
 
   return {
     "@context": "https://schema.org",
@@ -108,11 +84,12 @@ export function buildTreatmentSchema(
     name: title,
     description,
     url: canonical,
-    serviceType: "Dental Service",
+    serviceType: title,
     provider: {
-      "@type": "Dentist",
+      "@type": "Organization",
+      "@id": `${clinicUrl}#organization`,
       name: clinicName,
-      url: getCanonicalUrl(locale),
+      url: clinicUrl,
     },
   };
 }
@@ -123,16 +100,20 @@ export type FaqItemSchema = {
 };
 
 /**
- * Builds FAQPage schema directly from visible FAQ items.
- * Ensures complete parity between visible content and structured data.
+ * Builds FAQPage schema directly from visible FAQ content.
+ * This improves machine-readable parity but does not imply eligibility for a rich result.
  */
 export function buildFaqSchema(items: FaqItemSchema[]) {
-  if (!items || items.length === 0) return null;
+  const validItems = items.filter(
+    (item) => item.question.trim().length > 0 && item.answer.trim().length > 0
+  );
+
+  if (!validItems.length) return null;
 
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: items.map((item) => ({
+    mainEntity: validItems.map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: {
@@ -143,23 +124,38 @@ export function buildFaqSchema(items: FaqItemSchema[]) {
   };
 }
 
+export type VerifiedDoctorData = {
+  name: string;
+  jobTitle?: string;
+};
+
 /**
- * Conditional Doctor / Person Schema builder.
- * If verified doctor name or entity information is not present, returns null.
- * Never creates placeholder or fake Doctor entities.
+ * Builds a doctor Person entity only when verified identity data is supplied.
+ * Optional properties are emitted only when explicitly provided.
  */
 export function buildDoctorPersonSchema(
-  _locale: AppLocale,
-  verifiedDoctorData?: { name: string; jobTitle?: string }
+  locale: AppLocale,
+  verifiedDoctorData?: VerifiedDoctorData
 ) {
-  if (!verifiedDoctorData || !verifiedDoctorData.name) {
-    return null;
-  }
+  const name = verifiedDoctorData?.name?.trim();
+  if (!name) return null;
+
+  const canonical = getCanonicalUrl(locale, "doctor");
+  const clinicUrl = getCanonicalUrl(locale);
+  const jobTitle = verifiedDoctorData?.jobTitle?.trim();
 
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: verifiedDoctorData.name,
-    jobTitle: verifiedDoctorData.jobTitle || "Dentist",
+    "@id": `${canonical}#doctor`,
+    name,
+    url: canonical,
+    ...(jobTitle ? { jobTitle } : {}),
+    worksFor: {
+      "@type": "Organization",
+      "@id": `${clinicUrl}#organization`,
+      name: siteConfig.name[locale] || siteConfig.name.en,
+      url: clinicUrl,
+    },
   };
 }
