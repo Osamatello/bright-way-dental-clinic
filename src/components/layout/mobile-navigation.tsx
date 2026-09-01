@@ -49,7 +49,7 @@ export function MobileNavigation({
       <button
         aria-expanded={isOpen}
         aria-label={isOpen ? closeLabel : menuLabel}
-        className="grid size-11 place-items-center rounded-full border border-navy/15 bg-white/55 shadow-[0_8px_28px_rgba(21,36,53,0.06)] transition-colors hover:border-gold/70"
+        className="grid size-10 place-items-center rounded-full border border-navy/15 bg-white/65 shadow-[0_8px_24px_rgba(21,36,53,0.05)] transition-colors hover:border-gold/70"
         onClick={() => setIsOpen((open) => !open)}
         type="button"
       >
@@ -70,8 +70,8 @@ export function MobileNavigation({
 
       <div
         aria-hidden={!isOpen}
-        className={`fixed inset-x-0 bottom-0 top-[79px] z-40 overflow-y-auto bg-ivory/98 backdrop-blur-xl transition-[opacity,visibility] duration-300 ${
-          isOpen ? "visible opacity-100" : "invisible opacity-0"
+        className={`fixed inset-x-0 bottom-0 top-[71px] z-40 overflow-y-auto bg-ivory/98 backdrop-blur-xl transition-[opacity,visibility,transform] duration-300 ${
+          isOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0"
         }`}
       >
         <nav className="site-container flex min-h-full flex-col py-8" aria-label={menuLabel}>
@@ -82,7 +82,7 @@ export function MobileNavigation({
           <div className="flex flex-col border-t border-navy/12">
             {items.map((item, index) => (
               <Link
-                className="display-heading group flex items-center justify-between border-b border-navy/12 py-5 text-[2rem] text-navy"
+                className="display-heading group flex items-center justify-between border-b border-navy/12 py-4 text-[1.75rem] text-navy"
                 href={item.href}
                 key={item.label}
                 onClick={() => setIsOpen(false)}

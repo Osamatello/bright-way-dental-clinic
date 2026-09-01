@@ -21,7 +21,7 @@ export function BrandMark({
       aria-label="Bright Way Dental Clinic"
     >
       <span
-        className={`relative size-12 shrink-0 overflow-hidden rounded-full transition-transform duration-500 group-hover:scale-[1.03] sm:size-14 ${
+        className={`relative size-10 shrink-0 overflow-hidden rounded-full transition-transform duration-500 group-hover:scale-[1.03] lg:size-11 ${
           inverse ? "ring-1 ring-white/30" : "ring-1 ring-gold/55"
         }`}
       >
@@ -29,20 +29,20 @@ export function BrandMark({
           alt=""
           className="object-cover"
           fill
-          sizes="56px"
+          sizes="44px"
           src="/images/bright-way-official-logo.jpeg"
         />
       </span>
       <span className="flex flex-col leading-none">
         <span
-          className={`text-[0.84rem] font-semibold uppercase tracking-[0.15em] sm:text-[0.92rem] sm:tracking-[0.17em] ${
+          className={`text-[0.77rem] font-semibold uppercase tracking-[0.14em] sm:text-[0.84rem] ${
             inverse ? "text-white" : "text-navy"
           }`}
         >
           Bright Way
         </span>
         <span
-          className={`mt-1.5 text-[0.56rem] font-medium uppercase tracking-[0.18em] sm:text-[0.62rem] sm:tracking-[0.2em] ${
+          className={`mt-1 text-[0.52rem] font-medium uppercase tracking-[0.16em] sm:text-[0.57rem] ${
             inverse ? "text-white/60" : "text-slate"
           }`}
         >
