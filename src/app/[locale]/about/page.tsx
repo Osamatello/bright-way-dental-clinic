@@ -41,7 +41,7 @@ export default async function AboutPageRoute({ params }: AboutPageProps) {
     <>
       <div className="bg-cream">
         <div className="site-container">
-          <Breadcrumbs locale={appLocale} items={[{ label: t("title") }]} />
+          <Breadcrumbs locale={appLocale} items={[{ label: t("title"), path: "about" }]} />
         </div>
       </div>
       <AboutContent locale={appLocale} />
