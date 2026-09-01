@@ -44,7 +44,10 @@ export default async function TreatmentsPage({ params }: TreatmentsPageProps) {
     <>
       <div className="bg-cream">
         <div className="site-container">
-          <Breadcrumbs locale={appLocale} items={[{ label: t("eyebrow") }]} />
+          <Breadcrumbs
+            locale={appLocale}
+            items={[{ label: t("eyebrow"), path: "treatments" }]}
+          />
         </div>
       </div>
       <TreatmentsOverview locale={appLocale} />
