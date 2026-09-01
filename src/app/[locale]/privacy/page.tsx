@@ -41,7 +41,7 @@ export default async function PrivacyPageRoute({ params }: PrivacyPageProps) {
     <>
       <div className="bg-cream">
         <div className="site-container">
-          <Breadcrumbs locale={appLocale} items={[{ label: t("title") }]} />
+          <Breadcrumbs locale={appLocale} items={[{ label: t("title"), path: "privacy" }]} />
         </div>
       </div>
       <PrivacyContent locale={appLocale} />
