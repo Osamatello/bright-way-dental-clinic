@@ -2,40 +2,50 @@ import type { AppLocale } from "@/i18n/routing";
 import type { TreatmentSlug } from "@/data/treatments";
 import { getBaseUrl, getCanonicalUrl, siteConfig } from "./seo";
 
+function getOrganizationId() {
+  return `${getBaseUrl()}/#organization`;
+}
+
+function getWebSiteId() {
+  return `${getBaseUrl()}/#website`;
+}
+
 /**
- * Builds a conservative clinic entity using only verified data currently available.
+ * Builds one stable clinic entity across all locales using only verified data.
  * LocalBusiness/Dentist-specific fields such as address, phone, geo coordinates,
- * opening hours, ratings, and area served are intentionally omitted until verified.
+ * opening hours, ratings, and area served remain intentionally omitted until verified.
  */
-export function buildClinicSchema(locale: AppLocale) {
-  const clinicName = siteConfig.name[locale] || siteConfig.name.en;
-  const canonical = getCanonicalUrl(locale);
+export function buildClinicSchema(_locale: AppLocale) {
   const baseUrl = getBaseUrl();
 
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": `${canonical}#organization`,
-    name: clinicName,
-    url: canonical,
+    "@id": getOrganizationId(),
+    name: siteConfig.name.en,
+    alternateName: siteConfig.name.ar,
+    url: baseUrl,
     image: `${baseUrl}/images/bright-way-clinic-hero.webp`,
   };
 }
 
 /**
- * Builds the WebSite entity schema without claiming unsupported search features.
+ * Builds one stable bilingual WebSite entity without claiming unsupported search features.
  */
-export function buildWebSiteSchema(locale: AppLocale) {
-  const siteName = siteConfig.name[locale] || siteConfig.name.en;
-  const canonical = getCanonicalUrl(locale);
+export function buildWebSiteSchema(_locale: AppLocale) {
+  const baseUrl = getBaseUrl();
 
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${canonical}#website`,
-    name: siteName,
-    url: canonical,
-    inLanguage: locale,
+    "@id": getWebSiteId(),
+    name: siteConfig.name.en,
+    alternateName: siteConfig.name.ar,
+    url: baseUrl,
+    inLanguage: ["en", "ar"],
+    publisher: {
+      "@id": getOrganizationId(),
+    },
   };
 }
 
@@ -64,8 +74,8 @@ export function buildBreadcrumbSchema(locale: AppLocale, items: BreadcrumbItem[]
 
 /**
  * Uses Service as the safe baseline for every treatment page.
- * We intentionally avoid MedicalProcedure classifications until each treatment's
- * clinical categorization has been reviewed and approved with verified clinic content.
+ * MedicalProcedure classifications remain intentionally disabled until each treatment's
+ * clinical categorization has been reviewed with verified clinic content.
  */
 export function buildTreatmentSchema(
   locale: AppLocale,
@@ -74,8 +84,6 @@ export function buildTreatmentSchema(
   description: string
 ) {
   const canonical = getCanonicalUrl(locale, `treatments/${slug}`);
-  const clinicName = siteConfig.name[locale] || siteConfig.name.en;
-  const clinicUrl = getCanonicalUrl(locale);
 
   return {
     "@context": "https://schema.org",
@@ -87,9 +95,8 @@ export function buildTreatmentSchema(
     serviceType: title,
     provider: {
       "@type": "Organization",
-      "@id": `${clinicUrl}#organization`,
-      name: clinicName,
-      url: clinicUrl,
+      "@id": getOrganizationId(),
+      name: siteConfig.name.en,
     },
   };
 }
@@ -141,7 +148,6 @@ export function buildDoctorPersonSchema(
   if (!name) return null;
 
   const canonical = getCanonicalUrl(locale, "doctor");
-  const clinicUrl = getCanonicalUrl(locale);
   const jobTitle = verifiedDoctorData?.jobTitle?.trim();
 
   return {
@@ -153,9 +159,8 @@ export function buildDoctorPersonSchema(
     ...(jobTitle ? { jobTitle } : {}),
     worksFor: {
       "@type": "Organization",
-      "@id": `${clinicUrl}#organization`,
-      name: siteConfig.name[locale] || siteConfig.name.en,
-      url: clinicUrl,
+      "@id": getOrganizationId(),
+      name: siteConfig.name.en,
     },
   };
 }
