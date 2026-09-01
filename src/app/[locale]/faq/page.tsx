@@ -73,7 +73,10 @@ export default async function FaqPageRoute({ params }: FaqPageProps) {
       <JsonLd data={faqSchema} />
       <div className="bg-cream">
         <div className="site-container">
-          <Breadcrumbs locale={appLocale} items={[{ label: t("hero.eyebrow") }]} />
+          <Breadcrumbs
+            locale={appLocale}
+            items={[{ label: t("hero.eyebrow"), path: "faq" }]}
+          />
         </div>
       </div>
       <FaqContent locale={appLocale} />
