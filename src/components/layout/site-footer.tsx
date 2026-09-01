@@ -45,6 +45,12 @@ export async function SiteFooter({ locale }: SiteFooterProps) {
               <Link className="w-fit hover:text-white" href={`/${locale}/#doctor`}>
                 {nav("doctor")}
               </Link>
+              <Link className="w-fit hover:text-white" href={`/${locale}/#faq`}>
+                {nav("faq")}
+              </Link>
+              <Link className="w-fit hover:text-white" href={`/${locale}/#contact-section`}>
+                {nav("experience")}
+              </Link>
             </div>
           </div>
 

@@ -21,6 +21,8 @@ export async function SiteHeader({ locale }: SiteHeaderProps) {
     { href: `/${locale}/#treatments`, label: t("treatments") },
     { href: `/${locale}/#about`, label: t("about") },
     { href: `/${locale}/#doctor`, label: t("doctor") },
+    { href: `/${locale}/#experience`, label: t("experience") },
+    { href: `/${locale}/#faq`, label: t("faq") },
   ];
 
   return (

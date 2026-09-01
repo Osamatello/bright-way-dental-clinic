@@ -115,6 +115,108 @@
       "primaryAction": "Book an appointment",
       "secondaryAction": "Contact the clinic",
       "availability": "Booking integration coming in a later milestone"
+    },
+    "journey": {
+      "eyebrow": "Your visit",
+      "title": "A clear path from first conversation to ongoing care.",
+      "description": "Every patient journey is guided step by step — with clarity, comfort and time to ask questions at each stage.",
+      "items": {
+        "consultation": {
+          "number": "01",
+          "title": "Consultation",
+          "description": "An unhurried first conversation to understand your needs, concerns and what matters most to you."
+        },
+        "planning": {
+          "number": "02",
+          "title": "Treatment Planning",
+          "description": "A clear, personalised plan that explains your options and helps you make informed decisions at your own pace."
+        },
+        "care": {
+          "number": "03",
+          "title": "Treatment & Care",
+          "description": "Considered treatment delivered in a calm setting, with your comfort and understanding prioritised throughout."
+        },
+        "followUp": {
+          "number": "04",
+          "title": "Follow-up & Ongoing Care",
+          "description": "Continued support and regular check-ins to help you maintain your oral health with confidence."
+        }
+      }
+    },
+    "technology": {
+      "eyebrow": "Technology & Comfort",
+      "title": "Modern dentistry, designed around your comfort.",
+      "description": "Bright Way is built on the idea that thoughtful technology and a calm environment work together — so dental care feels precise, gentle and reassuring.",
+      "pointOne": "A calmer environment",
+      "pointOneBody": "Designed to feel less clinical and more personal, with space and quiet that help you feel at ease.",
+      "pointTwo": "Considered precision",
+      "pointTwoBody": "Modern dental approaches used thoughtfully, supporting careful and accurate treatment.",
+      "pointThree": "Patient comfort first",
+      "pointThreeBody": "Time taken to explain each step, so you always know what to expect before anything begins.",
+      "imageAlt": "Dentist explaining treatment to a patient in a warm, modern clinic",
+      "imageCaption": "Considered care, explained at every step"
+    },
+    "whyBrightWay": {
+      "eyebrow": "Why Bright Way",
+      "title": "A different kind of dental experience.",
+      "description": "Bright Way exists to make dental care feel more considered — where clarity, comfort and personal attention shape every visit.",
+      "valueOne": "Thoughtful, not rushed",
+      "valueOneBody": "Appointments that give you time to ask questions, understand your options and feel comfortable before deciding.",
+      "valueTwo": "Clear at every step",
+      "valueTwoBody": "Honest communication and transparent planning, so you always know what is recommended and why.",
+      "valueThree": "Care that feels personal",
+      "valueThreeBody": "Treatment shaped around your needs and comfort, not a one-size-fits-all approach.",
+      "statement": "Dentistry should feel as considered as the results it aims to achieve."
+    },
+    "faq": {
+      "eyebrow": "Questions & Answers",
+      "title": "Common questions, answered clearly.",
+      "description": "A starting point for the questions patients ask most. The clinic will expand this section as more details are confirmed.",
+      "items": {
+        "firstVisit": {
+          "question": "What should I expect at my first visit?",
+          "answer": "Your first visit is a consultation focused on understanding your needs and concerns. The dentist will take time to listen, assess your oral health and discuss any questions you may have — with no pressure to proceed immediately."
+        },
+        "booking": {
+          "question": "How do I book an appointment?",
+          "answer": "You can book by contacting the clinic directly once booking details are confirmed. The appointment section on this page will be connected to the clinic's preferred booking process in a later update."
+        },
+        "nervous": {
+          "question": "I feel nervous about dental visits. Can you help?",
+          "answer": "Many patients feel this way. Bright Way is designed around a calmer, more personal experience, with time to explain each step and help you feel comfortable before any treatment begins."
+        },
+        "insurance": {
+          "question": "Do you accept insurance?",
+          "answer": "Insurance and payment information will be provided once the clinic confirms its accepted plans and payment options."
+        },
+        "treatmentTime": {
+          "question": "How long will my treatment take?",
+          "answer": "Treatment timelines vary depending on your individual needs. After your consultation, the dentist will discuss a personalised plan that includes expected duration and the steps involved."
+        },
+        "emergency": {
+          "question": "What should I do in a dental emergency?",
+          "answer": "If you are experiencing a dental emergency, please contact the clinic directly for guidance. Emergency care details and policies will be confirmed and published here once available."
+        }
+      }
+    },
+    "location": {
+      "eyebrow": "Find us",
+      "title": "Visit Bright Way Dental Clinic.",
+      "description": "Clinic address, opening hours and contact details will be displayed here once confirmed by the clinic.",
+      "addressLabel": "Address",
+      "addressPlaceholder": "Clinic address will be added after confirmation.",
+      "hoursLabel": "Opening Hours",
+      "hoursPlaceholder": "Opening hours will be added after confirmation.",
+      "phoneLabel": "Phone",
+      "phonePlaceholder": "Phone number will be added after confirmation.",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Email address will be added after confirmation.",
+      "whatsappLabel": "WhatsApp",
+      "whatsappPlaceholder": "WhatsApp number will be added after confirmation.",
+      "directionsLabel": "Get directions",
+      "mapPlaceholder": "A map will be embedded here once the clinic location is confirmed.",
+      "primaryAction": "Book an appointment",
+      "secondaryAction": "Contact the clinic"
     }
   },
   "Footer": {
