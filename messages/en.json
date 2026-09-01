@@ -219,6 +219,153 @@
       "secondaryAction": "Contact the clinic"
     }
   },
+  "Treatments": {
+    "overview": {
+      "eyebrow": "Treatments",
+      "title": "Comprehensive care, thoughtfully structured.",
+      "description": "From routine maintenance to specialised procedures, every treatment at Bright Way is designed around clarity, comfort and your individual needs.",
+      "viewTreatment": "Explore treatment",
+      "backToHome": "Back to home"
+    },
+    "detail": {
+      "backToOverview": "All treatments",
+      "eyebrow": "Treatment",
+      "introLabel": "Overview",
+      "whatIsLabel": "What is this treatment?",
+      "whoBenefitsLabel": "Who may benefit?",
+      "whatToExpectLabel": "What to expect",
+      "processLabel": "The process",
+      "comfortLabel": "Comfort & care",
+      "relatedLabel": "Related treatments",
+      "bookAction": "Book an appointment",
+      "contactAction": "Contact the clinic",
+      "processSteps": {
+        "stepLabel": "Step"
+      }
+    },
+    "items": {
+      "general-dentistry": {
+        "title": "General Dentistry",
+        "shortDescription": "Routine care focused on maintaining the health, comfort and function of your teeth.",
+        "intro": "General dentistry forms the foundation of long-term oral health — covering the routine check-ups, preventive care and minor treatments that keep your teeth and gums healthy.",
+        "whatIs": "General dentistry includes examinations, professional cleaning, fillings, and preventive advice. It focuses on early detection and maintaining your natural teeth in good condition.",
+        "whoBenefits": "General dentistry is suitable for patients of all ages. Whether you are due for a routine check-up, have a specific concern, or want to maintain your oral health, general dental care is the right starting point.",
+        "whatToExpect": "A typical visit includes a thorough examination, any necessary X-rays, a professional clean, and a discussion of your oral health. Your dentist will explain any findings and recommend next steps clearly.",
+        "comfort": "Check-ups and routine treatments are generally comfortable. Your dentist will take time to explain each step and check in on your comfort throughout the visit.",
+        "processSteps": [
+          "Examination and assessment of your oral health",
+          "Professional cleaning and preventive care",
+          "Discussion of findings and recommendations",
+          "Personalised advice for ongoing maintenance"
+        ]
+      },
+      "cosmetic-dentistry": {
+        "title": "Cosmetic Dentistry",
+        "shortDescription": "Personalised options designed to refine the appearance of your smile with a natural result in mind.",
+        "intro": "Cosmetic dentistry focuses on enhancing the appearance of your smile through a range of considered treatments, always with a natural and harmonious result in mind.",
+        "whatIs": "Cosmetic dentistry includes treatments such as veneers, bonding, and smile redesign. Each option is tailored to your features and preferences, aiming for a result that looks and feels natural.",
+        "whoBenefits": "Cosmetic dentistry may suit patients who wish to refine the shape, colour, or alignment of their teeth. A consultation will help determine which options are appropriate for your individual case.",
+        "whatToExpect": "Your journey begins with a consultation to understand your goals. Your dentist will assess your teeth, discuss options, and create a personalised plan before any treatment begins.",
+        "comfort": "Many cosmetic treatments are minimally invasive. Your dentist will explain what to expect and ensure you are comfortable throughout the process.",
+        "processSteps": [
+          "Consultation to understand your goals",
+          "Assessment and treatment planning",
+          "Personalised cosmetic treatment",
+          "Review and guidance for maintaining results"
+        ]
+      },
+      "dental-implants": {
+        "title": "Dental Implants",
+        "shortDescription": "A structured consultation-led approach to replacing missing teeth and restoring confidence.",
+        "intro": "Dental implants offer a structured approach to replacing missing teeth, designed to restore both function and confidence through a carefully planned process.",
+        "whatIs": "A dental implant is a small post placed in the jaw to support a replacement tooth. It is designed to provide a stable, long-lasting solution for one or more missing teeth.",
+        "whoBenefits": "Implants may be suitable for patients who have lost one or more teeth and have adequate jawbone support. A thorough assessment is needed to determine if implants are the right option for you.",
+        "whatToExpect": "The implant process is planned across multiple stages — from initial consultation and assessment to placement and the fitting of the final restoration. Your dentist will guide you through each step.",
+        "comfort": "Implant procedures are typically performed with appropriate care for your comfort. Your dentist will explain the process and aftercare in detail before treatment begins.",
+        "processSteps": [
+          "Consultation and clinical assessment",
+          "Treatment planning and preparation",
+          "Implant placement and healing period",
+          "Fitting of the final restoration"
+        ]
+      },
+      "orthodontics": {
+        "title": "Orthodontics",
+        "shortDescription": "Treatments designed to align teeth and improve bite function for long-term oral health.",
+        "intro": "Orthodontics focuses on aligning teeth and correcting bite issues, contributing to both the appearance and long-term function of your smile.",
+        "whatIs": "Orthodontic treatment uses appliances such as braces or clear aligners to gradually move teeth into better alignment. The approach is tailored to your individual needs and dental development.",
+        "whoBenefits": "Orthodontics may benefit patients with crowded, spaced, or misaligned teeth, or those with bite issues. A consultation will help determine the most appropriate approach for your case.",
+        "whatToExpect": "Treatment begins with an assessment of your teeth and bite. Your dentist will discuss your options, expected timeline, and what each stage of treatment involves.",
+        "comfort": "Modern orthodontic approaches are designed with comfort in mind. You may experience some adjustment periods, which your dentist will help you manage.",
+        "processSteps": [
+          "Assessment of teeth and bite alignment",
+          "Personalised treatment planning",
+          "Gradual alignment with regular check-ups",
+          "Retention and long-term maintenance"
+        ]
+      },
+      "teeth-whitening": {
+        "title": "Teeth Whitening",
+        "shortDescription": "A gentle approach to brightening your smile with professional supervision.",
+        "intro": "Professional teeth whitening offers a supervised way to brighten your smile, using methods designed for safety and a natural-looking result.",
+        "whatIs": "Teeth whitening is a cosmetic treatment that lightens the shade of your teeth. Professional whitening is supervised by your dentist to ensure safe and even results.",
+        "whoBenefits": "Whitening may suit patients who want to brighten their smile and have healthy teeth and gums. A consultation will confirm whether whitening is appropriate for you.",
+        "whatToExpect": "After an assessment, your dentist will recommend a whitening approach suited to your teeth. Treatment may be performed in-office or with a take-home kit, depending on the recommended plan.",
+        "comfort": "Professional whitening is designed to minimise sensitivity. Your dentist will discuss what to expect and how to care for your teeth during and after treatment.",
+        "processSteps": [
+          "Assessment of tooth shade and suitability",
+          "Professional whitening treatment",
+          "Guidance on maintaining results",
+          "Follow-up review as needed"
+        ]
+      },
+      "root-canal-treatment": {
+        "title": "Root Canal Treatment",
+        "shortDescription": "A treatment designed to preserve a damaged tooth and relieve discomfort.",
+        "intro": "Root canal treatment is a procedure that aims to save a tooth that has been damaged by decay or infection, relieving discomfort and preserving your natural tooth where possible.",
+        "whatIs": "Root canal treatment involves removing the damaged tissue inside a tooth, cleaning the area, and sealing it to prevent further infection. The goal is to preserve the natural tooth structure.",
+        "whoBenefits": "Root canal treatment may be recommended for patients with deep decay, infection, or damage to a tooth's inner tissue. An examination is needed to determine if this treatment is appropriate.",
+        "whatToExpect": "Your dentist will assess the tooth, explain the need for treatment, and carry out the procedure over one or more visits. A restoration is usually placed afterwards to protect the tooth.",
+        "comfort": "Modern techniques aim to make root canal treatment as comfortable as possible. Your dentist will explain each step and ensure you are informed and at ease throughout.",
+        "processSteps": [
+          "Examination and diagnosis",
+          "Cleaning and treating the tooth interior",
+          "Sealing and protecting the tooth",
+          "Placement of a final restoration"
+        ]
+      },
+      "pediatric-dentistry": {
+        "title": "Pediatric Dentistry",
+        "shortDescription": "Gentle dental care designed for children in a calm and welcoming environment.",
+        "intro": "Pediatric dentistry focuses on the oral health of children, providing gentle care in a calm environment that helps young patients feel comfortable and supported.",
+        "whatIs": "Pediatric dental care includes check-ups, preventive treatments, and guidance on developing healthy oral habits. It is tailored to the needs of growing teeth and gums.",
+        "whoBenefits": "Pediatric dentistry is designed for children from their first dental visit through their teenage years. Early and regular dental care helps establish healthy habits for life.",
+        "whatToExpect": "A child's dental visit typically includes a gentle examination, cleaning if appropriate, and guidance for parents on caring for their child's teeth at home.",
+        "comfort": "A calm and patient approach helps children feel at ease. The dentist will take time to explain things in a child-friendly way and proceed at a comfortable pace.",
+        "processSteps": [
+          "Gentle examination and assessment",
+          "Preventive care and cleaning",
+          "Guidance for parents and children",
+          "Ongoing monitoring as teeth develop"
+        ]
+      },
+      "emergency-dentistry": {
+        "title": "Emergency Dentistry",
+        "shortDescription": "Prompt attention for urgent dental concerns and unexpected discomfort.",
+        "intro": "Emergency dental care addresses urgent concerns such as severe pain, injury, or unexpected damage — providing prompt attention when you need it most.",
+        "whatIs": "Emergency dentistry covers urgent situations including toothache, broken or knocked-out teeth, and dental injuries. The goal is to relieve discomfort and address the problem quickly.",
+        "whoBenefits": "Emergency care is for anyone experiencing a dental issue that requires immediate attention. If you are unsure whether your situation is urgent, it is best to contact the clinic for guidance.",
+        "whatToExpect": "For a dental emergency, contact the clinic as soon as possible. Your dentist will assess the situation, provide immediate care where needed, and plan any follow-up treatment.",
+        "comfort": "Emergency care prioritises relieving discomfort. Your dentist will explain what is happening and work quickly to address the issue.",
+        "processSteps": [
+          "Contact the clinic for guidance",
+          "Urgent assessment and pain relief",
+          "Immediate treatment as needed",
+          "Follow-up care and planning"
+        ]
+      }
+    }
+  },
   "Footer": {
     "description": "A warm, modern foundation for thoughtful dental care.",
     "explore": "Explore",

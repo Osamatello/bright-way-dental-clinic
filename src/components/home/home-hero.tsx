@@ -31,7 +31,7 @@ export async function HomeHero({ locale }: HomeHeroProps) {
               <ButtonLink href={`/${locale}/#appointment`}>
                 {t("primaryAction")}
               </ButtonLink>
-              <ButtonLink href={`/${locale}/#treatments`} variant="secondary">
+              <ButtonLink href={`/${locale}/treatments`} variant="secondary">
                 {t("secondaryAction")}
               </ButtonLink>
             </div>

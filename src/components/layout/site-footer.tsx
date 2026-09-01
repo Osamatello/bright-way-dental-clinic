@@ -36,7 +36,7 @@ export async function SiteFooter({ locale }: SiteFooterProps) {
               {footer("explore")}
             </p>
             <div className="mt-5 flex flex-col gap-3 text-sm text-white/75">
-              <Link className="w-fit hover:text-white" href={`/${locale}/#treatments`}>
+              <Link className="w-fit hover:text-white" href={`/${locale}/treatments`}>
                 {nav("treatments")}
               </Link>
               <Link className="w-fit hover:text-white" href={`/${locale}/#about`}>
