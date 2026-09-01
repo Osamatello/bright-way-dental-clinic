@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { routing, type AppLocale } from "@/i18n/routing";
+import { getBaseUrl, getCanonicalUrl, getLanguageAlternates, siteConfig } from "@/lib/seo";
 
 import "../globals.css";
 
@@ -57,22 +58,50 @@ export async function generateMetadata({
   if (!hasLocale(routing.locales, locale)) notFound();
 
   const t = await getTranslations({ locale, namespace: "Metadata" });
+  const appLocale = locale as AppLocale;
+  const baseUrl = getBaseUrl();
+  const canonical = getCanonicalUrl(appLocale);
+  const alternates = getLanguageAlternates();
+  const siteName = siteConfig.name[appLocale] || siteConfig.name.en;
+  const ogImage = `${baseUrl}${siteConfig.defaultOgImage}`;
 
   return {
-    metadataBase: new URL("https://brightwaydental.example"),
+    metadataBase: new URL(baseUrl),
     title: {
       default: t("title"),
       template: `%s | ${t("title")}`,
     },
     description: t("description"),
-    robots: { index: false, follow: false },
+    robots: {
+      index: true,
+      follow: true,
+    },
     alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        en: "/en",
-        ar: "/ar",
-        "x-default": "/en",
-      },
+      canonical,
+      languages: alternates.languages,
+    },
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: canonical,
+      siteName,
+      locale: appLocale === "ar" ? "ar_AE" : "en_US",
+      alternateLocale: appLocale === "ar" ? "en_US" : "ar_AE",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: siteName,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: [ogImage],
     },
   };
 }
