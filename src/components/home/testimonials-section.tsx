@@ -11,10 +11,10 @@ const copy = {
     description: "Sample testimonials for the Bright Way website presentation.",
     disclaimer: "Demonstration content — replace with verified patient feedback before launch.",
     items: [
-      ["The visit felt calm, organised and genuinely personal from the first conversation.", "Lina A. · Sample patient"],
-      ["Everything was explained clearly, and I never felt rushed when asking questions.", "Omar K. · Sample patient"],
-      ["A welcoming environment and a thoughtful approach made the experience feel different.", "Maya R. · Sample patient"],
-      ["Booking was simple and the communication throughout the visit was reassuring.", "Karim H. · Sample patient"],
+      ["The visit felt calm, organised and genuinely personal from the first conversation.", "Lina A. · Sample patient", "LA"],
+      ["Everything was explained clearly, and I never felt rushed when asking questions.", "Omar K. · Sample patient", "OK"],
+      ["A welcoming environment and a thoughtful approach made the experience feel different.", "Maya R. · Sample patient", "MR"],
+      ["Booking was simple and the communication throughout the visit was reassuring.", "Karim H. · Sample patient", "KH"],
     ],
   },
   ar: {
@@ -23,10 +23,10 @@ const copy = {
     description: "آراء تجريبية مخصصة لعرض موقع برايت واي.",
     disclaimer: "محتوى تجريبي — يُستبدل بآراء مرضى موثقة قبل الإطلاق.",
     items: [
-      ["كانت الزيارة هادئة ومنظمة وشعرت بالاهتمام منذ المحادثة الأولى.", "لينا أ. · مريضة تجريبية"],
-      ["تم شرح كل شيء بوضوح، وكان لدي الوقت الكافي لطرح جميع أسئلتي.", "عمر ك. · مريض تجريبي"],
-      ["البيئة المريحة والأسلوب المدروس جعلا التجربة مختلفة بالفعل.", "مايا ر. · مريضة تجريبية"],
-      ["كان الحجز بسيطاً والتواصل خلال الزيارة مطمئناً وواضحاً.", "كريم هـ. · مريض تجريبي"],
+      ["كانت الزيارة هادئة ومنظمة وشعرت بالاهتمام منذ المحادثة الأولى.", "لينا أ. · مريضة تجريبية", "ل أ"],
+      ["تم شرح كل شيء بوضوح، وكان لدي الوقت الكافي لطرح جميع أسئلتي.", "عمر ك. · مريض تجريبي", "ع ك"],
+      ["البيئة المريحة والأسلوب المدروس جعلا التجربة مختلفة بالفعل.", "مايا ر. · مريضة تجريبية", "م ر"],
+      ["كان الحجز بسيطاً والتواصل خلال الزيارة مطمئناً وواضحاً.", "كريم هـ. · مريض تجريبي", "ك هـ"],
     ],
   },
 } as const;
@@ -43,13 +43,16 @@ export function TestimonialsSection({ locale }: TestimonialsSectionProps) {
           <p className="testimonials__description">{content.description}</p>
 
           <div className="testimonials__cards">
-            {content.items.map(([quote, author]) => (
+            {content.items.map(([quote, author, initials]) => (
               <figure className="testimonials__card" key={author} tabIndex={0}>
                 <div aria-label={locale === "ar" ? "خمس نجوم تجريبية" : "Five demo stars"} className="testimonials__stars">
                   {[0, 1, 2, 3, 4].map((star) => <span aria-hidden="true" key={star}>★</span>)}
                 </div>
                 <blockquote>“{quote}”</blockquote>
-                <figcaption>{author}</figcaption>
+                <figcaption>
+                  <span aria-hidden="true" className="testimonials__avatar">{initials}</span>
+                  <span>{author}</span>
+                </figcaption>
               </figure>
             ))}
           </div>
