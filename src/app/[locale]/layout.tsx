@@ -4,6 +4,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
+import { BookingProvider } from "@/components/booking/booking-provider";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -138,9 +139,11 @@ export default async function LocaleLayout({
       <body>
         <JsonLd data={globalSchema} />
         <NextIntlClientProvider messages={messages}>
-          <SiteHeader locale={appLocale} />
-          <main>{children}</main>
-          <SiteFooter locale={appLocale} />
+          <BookingProvider>
+            <SiteHeader locale={appLocale} />
+            <main>{children}</main>
+            <SiteFooter locale={appLocale} />
+          </BookingProvider>
         </NextIntlClientProvider>
       </body>
     </html>

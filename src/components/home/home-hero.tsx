@@ -2,6 +2,7 @@ import "./home-hero.css";
 
 import { getTranslations } from "next-intl/server";
 
+import { BookingTrigger } from "@/components/booking/booking-trigger";
 import { EditorialMedia } from "@/components/primitives/editorial-media";
 import { PremiumLink } from "@/components/primitives/premium-link";
 import { SectionEyebrow } from "@/components/primitives/section-eyebrow";
@@ -40,9 +41,9 @@ export async function HomeHero({ locale }: HomeHeroProps) {
           </p>
 
           <div className="hero__actions hero__reveal hero__reveal--4">
-            <PremiumLink href={`/${locale}#appointment`} showArrow variant="primary">
+            <BookingTrigger showArrow variant="premium-primary">
               {t("primaryAction")}
-            </PremiumLink>
+            </BookingTrigger>
             <PremiumLink
               href={`/${locale}#treatments`}
               showArrow

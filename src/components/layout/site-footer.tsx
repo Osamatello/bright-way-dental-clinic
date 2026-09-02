@@ -3,6 +3,7 @@ import "./site-footer.css";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
+import { BookingTrigger } from "@/components/booking/booking-trigger";
 import type { AppLocale } from "@/i18n/routing";
 
 import { BrandMark } from "../brand/brand-mark";
@@ -36,7 +37,9 @@ export async function SiteFooter({ locale }: SiteFooterProps) {
           </nav>
           <div className="site-footer__action">
             <p>{locale === "ar" ? "خطوتك التالية" : "Your next step"}</p>
-            <Link href={`/${locale}#appointment`}>{nav("book")} <span aria-hidden="true">↗</span></Link>
+            <BookingTrigger showArrow variant="footer-pill">
+              {nav("book")}
+            </BookingTrigger>
           </div>
         </div>
         <div className="site-footer__bottom">
