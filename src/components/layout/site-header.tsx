@@ -27,16 +27,15 @@ export async function SiteHeader({ locale }: SiteHeaderProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-navy/8 bg-ivory/94 shadow-[0_8px_30px_rgba(21,36,53,0.035)] backdrop-blur-xl">
-      <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-light/65 to-transparent" />
-      <div className="site-container grid h-[70px] grid-cols-[1fr_auto] items-center gap-4 lg:h-[82px] lg:grid-cols-[auto_1fr_auto] lg:gap-8">
+    <header className="sticky top-0 z-50 border-b border-navy/8 bg-white/96 shadow-[0_5px_22px_rgba(21,36,53,0.055)] backdrop-blur-xl">
+      <div className="site-container grid h-[66px] grid-cols-[1fr_auto] items-center gap-4 lg:h-[74px] lg:grid-cols-[auto_1fr_auto] lg:gap-8">
         <BrandMark locale={locale} clinicLabel={brand("clinic")} />
 
         <div className="hidden justify-center lg:flex">
-          <nav aria-label={t("menu")} className="flex items-center gap-6 xl:gap-9">
+          <nav aria-label={t("menu")} className="flex items-center gap-5 xl:gap-8">
             {items.map((item) => (
               <Link
-                className="relative py-3 text-[0.67rem] font-semibold uppercase tracking-[0.13em] text-navy/62 transition-colors duration-300 after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:text-navy hover:after:scale-x-100 focus-visible:text-navy rtl:after:origin-right"
+                className="relative py-3 text-[0.76rem] font-medium tracking-[-0.01em] text-navy/66 transition-colors duration-200 after:absolute after:inset-x-0 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-200 hover:text-navy hover:after:scale-x-100 focus-visible:text-navy rtl:after:origin-right"
                 href={item.href}
                 key={item.label}
               >
@@ -49,7 +48,7 @@ export async function SiteHeader({ locale }: SiteHeaderProps) {
         <div className="hidden items-center gap-3 lg:flex">
           <LocaleSwitcher locale={locale} />
           <Link
-            className="group inline-flex min-h-11 items-center justify-center gap-4 rounded-full bg-navy px-6 text-[0.67rem] font-semibold uppercase tracking-[0.13em] text-white shadow-[0_10px_26px_rgba(21,36,53,0.13)] transition-[background-color,transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:bg-navy/92 hover:shadow-[0_14px_30px_rgba(21,36,53,0.19)]"
+            className="group inline-flex min-h-10 items-center justify-center gap-3 rounded-lg bg-navy px-5 text-[0.72rem] font-semibold tracking-[0.04em] text-white shadow-[0_8px_20px_rgba(21,36,53,0.12)] transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-navy/92 hover:shadow-[0_12px_26px_rgba(21,36,53,0.18)]"
             href={`/${locale}/contact`}
           >
             <span>{t("book")}</span>

@@ -1,3 +1,5 @@
+import "./home-vance.css";
+
 import type { AppLocale } from "@/i18n/routing";
 
 import { AboutPreview } from "./about-preview";
