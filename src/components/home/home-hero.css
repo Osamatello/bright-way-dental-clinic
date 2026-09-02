@@ -1,4 +1,4 @@
-.hero { position:relative; isolation:isolate; min-height:min(44rem,calc(100svh - 5.25rem)); overflow:hidden; background:#fff; }
+.hero { position:relative; isolation:isolate; min-height:min(40rem,calc(100svh - 5.25rem)); overflow:hidden; background:#fff; }
 .hero__grid { display:none; }
 .hero__inner { position:relative; min-height:inherit; display:grid; align-items:center; padding-block:clamp(3.5rem,7vw,6rem); }
 .hero__copy { position:relative; z-index:3; width:min(40rem,55%); }
