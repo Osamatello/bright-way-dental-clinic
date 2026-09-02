@@ -69,6 +69,26 @@ export async function TreatmentsPreview({ locale }: TreatmentsPreviewProps) {
               </article>
             );
           })}
+          <article className="group relative grid min-h-56 overflow-hidden border-b border-navy/14 transition-colors duration-500 hover:bg-cream sm:grid-cols-[5rem_1fr_auto] sm:items-center sm:gap-7">
+            <p className="pt-7 text-xs font-semibold text-gold sm:ps-5 sm:pt-0">
+              04
+            </p>
+            <div className="pb-7 sm:py-9">
+              <h3 className="display-heading text-4xl text-navy transition-transform duration-500 group-hover:translate-x-2 sm:text-5xl rtl:group-hover:-translate-x-2">
+                {locale === "ar" ? "استكشف جميع العلاجات" : "Explore all treatments"}
+              </h3>
+              <p className="mt-4 max-w-lg text-sm leading-7 text-slate">
+                {t("description")}
+              </p>
+            </div>
+            <Link
+              aria-label={locale === "ar" ? "عرض جميع العلاجات" : "View all treatments"}
+              className="absolute bottom-6 end-0 grid size-12 place-items-center rounded-full border border-navy/20 text-lg text-navy transition-[background-color,color,transform] duration-300 group-hover:-translate-y-1 group-hover:bg-navy group-hover:text-white sm:static sm:me-5"
+              href={`/${locale}/treatments`}
+            >
+              <span aria-hidden="true">↗</span>
+            </Link>
+          </article>
         </div>
       </div>
     </section>
