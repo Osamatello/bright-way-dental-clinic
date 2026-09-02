@@ -1,24 +1,11 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
-import { treatmentSlugs } from "@/data/treatments";
 import { getBaseUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = getBaseUrl();
 
-  const staticPaths = [
-    "",
-    "about",
-    "doctor",
-    "treatments",
-    "results",
-    "faq",
-    "contact",
-    "privacy",
-  ];
-
-  const treatmentPaths = treatmentSlugs.map((slug) => `treatments/${slug}`);
-  const allPaths = [...staticPaths, ...treatmentPaths];
+  const allPaths = [""];
 
   const sitemapEntries: MetadataRoute.Sitemap = [];
 

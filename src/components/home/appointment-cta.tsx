@@ -18,8 +18,8 @@ export async function AppointmentCta({ locale }: AppointmentCtaProps) {
         <div className="appointment-compact__action">
           <p>{t("description")}</p>
           <div>
-            <ButtonLink href={`/${locale}/contact`} variant="light">{t("primaryAction")}</ButtonLink>
-            <ButtonLink className="border-white/55 text-white hover:border-white hover:bg-white hover:text-navy" href={`/${locale}/contact#clinic-details`} variant="secondary">{t("secondaryAction")}</ButtonLink>
+            <ButtonLink href={`/${locale}#contact-section`} variant="light">{t("primaryAction")}</ButtonLink>
+            <ButtonLink className="border-white/55 text-white hover:border-white hover:bg-white hover:text-navy" href={`/${locale}#contact-section`} variant="secondary">{t("secondaryAction")}</ButtonLink>
           </div>
         </div>
       </div>

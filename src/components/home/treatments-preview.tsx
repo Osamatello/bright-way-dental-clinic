@@ -43,7 +43,7 @@ export function TreatmentsPreview({ locale }: TreatmentsPreviewProps) {
         </header>
 
         <div className="treatment-menu__grid">
-          {content.services.map(([title, detail, availability, slug]) => (
+          {content.services.map(([title, detail, availability]) => (
             <article className="treatment-menu__card" key={title}>
               <div className="treatment-menu__topline">
                 <div>
@@ -52,7 +52,7 @@ export function TreatmentsPreview({ locale }: TreatmentsPreviewProps) {
                 </div>
                 <span title={content.demo}>◷ {availability}</span>
               </div>
-              <Link href={`/${locale}/treatments/${slug}`}>
+              <Link href={`/${locale}#appointment`}>
                 {content.select}
               </Link>
             </article>

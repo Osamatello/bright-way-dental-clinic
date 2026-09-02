@@ -18,12 +18,17 @@ export async function SiteHeader({ locale }: SiteHeaderProps) {
   ]);
 
   const items = [
-    { href: `/${locale}/treatments`, label: t("treatments") },
-    { href: `/${locale}/about`, label: t("about") },
-    { href: `/${locale}/doctor`, label: t("doctor") },
-    { href: `/${locale}/results`, label: t("results") },
-    { href: `/${locale}/faq`, label: t("faq") },
-    { href: `/${locale}/contact`, label: t("contact") },
+    { href: `/${locale}#treatments`, label: t("treatments") },
+    { href: `/${locale}#about`, label: t("about") },
+    { href: `/${locale}#doctor`, label: t("doctor") },
+    {
+      href: `/${locale}#testimonials`,
+      label: locale === "ar" ? "آراء المرضى" : "Testimonials",
+    },
+    {
+      href: `/${locale}#contact-section`,
+      label: locale === "ar" ? "موقعنا" : "Find Us",
+    },
   ];
 
   return (
@@ -49,7 +54,7 @@ export async function SiteHeader({ locale }: SiteHeaderProps) {
           <LocaleSwitcher locale={locale} />
           <Link
             className="group inline-flex min-h-13 items-center justify-center gap-3 rounded-xl bg-gold px-7 text-[0.92rem] font-bold tracking-[0.01em] text-white shadow-[0_8px_20px_rgba(11,114,116,0.16)] transition-[background-color,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-gold/92 hover:shadow-[0_12px_26px_rgba(11,114,116,0.22)]"
-            href={`/${locale}/contact`}
+            href={`/${locale}#appointment`}
           >
             <span>{t("book")}</span>
             <span aria-hidden="true" className="premium-arrow text-gold-light">↗</span>

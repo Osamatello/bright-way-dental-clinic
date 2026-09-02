@@ -40,11 +40,11 @@ export async function HomeHero({ locale }: HomeHeroProps) {
           </p>
 
           <div className="hero__actions hero__reveal hero__reveal--4">
-            <PremiumLink href={`/${locale}/contact`} showArrow variant="primary">
+            <PremiumLink href={`/${locale}#appointment`} showArrow variant="primary">
               {t("primaryAction")}
             </PremiumLink>
             <PremiumLink
-              href={`/${locale}/treatments`}
+              href={`/${locale}#treatments`}
               showArrow
               variant="secondary"
             >

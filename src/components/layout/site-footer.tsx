@@ -16,12 +16,11 @@ export async function SiteFooter({ locale }: SiteFooterProps) {
     getTranslations("Brand"),
   ]);
   const links = [
-    [nav("treatments"), `/${locale}/treatments`],
-    [nav("about"), `/${locale}/about`],
-    [nav("doctor"), `/${locale}/doctor`],
-    [nav("results"), `/${locale}/results`],
-    [nav("faq"), `/${locale}/faq`],
-    [nav("contact"), `/${locale}/contact`],
+    [nav("treatments"), `/${locale}#treatments`],
+    [nav("about"), `/${locale}#about`],
+    [nav("doctor"), `/${locale}#doctor`],
+    [locale === "ar" ? "آراء المرضى" : "Testimonials", `/${locale}#testimonials`],
+    [locale === "ar" ? "موقعنا" : "Find Us", `/${locale}#contact-section`],
   ];
 
   return (
@@ -37,13 +36,13 @@ export async function SiteFooter({ locale }: SiteFooterProps) {
           </nav>
           <div className="site-footer__action">
             <p>{locale === "ar" ? "خطوتك التالية" : "Your next step"}</p>
-            <Link href={`/${locale}/contact`}>{nav("book")} <span aria-hidden="true">↗</span></Link>
+            <Link href={`/${locale}#appointment`}>{nav("book")} <span aria-hidden="true">↗</span></Link>
           </div>
         </div>
         <div className="site-footer__bottom">
           <p>© {new Date().getFullYear()} {footer("rights")}</p>
           <p>{locale === "ar" ? "موقع تجريبي — تُستبدل التفاصيل قبل الإطلاق." : "Demo website — details will be replaced before launch."}</p>
-          <Link href={`/${locale}/privacy`}>{footer("privacy")}</Link>
+          <Link href={`/${locale}#top`}>{locale === "ar" ? "العودة للأعلى" : "Back to top"}</Link>
         </div>
       </div>
     </footer>

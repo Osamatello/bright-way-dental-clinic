@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-
 import type { AppLocale } from "@/i18n/routing";
 
 type LocaleSwitcherProps = {
@@ -14,11 +12,8 @@ export function LocaleSwitcher({
   locale,
   inverse = false,
 }: LocaleSwitcherProps) {
-  const pathname = usePathname();
   const nextLocale: AppLocale = locale === "en" ? "ar" : "en";
-  const segments = pathname.split("/");
-  segments[1] = nextLocale;
-  const href = segments.join("/") || `/${nextLocale}`;
+  const href = `/${nextLocale}`;
 
   return (
     <Link

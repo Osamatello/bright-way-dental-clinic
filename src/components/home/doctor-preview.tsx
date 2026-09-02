@@ -16,7 +16,7 @@ const copy = {
     demo: "Demo doctor profile",
     name: "Dr. Adam Kareem",
     role: "Lead Dentist · Demonstration Profile",
-    action: "View doctor profile",
+    action: "Request a consultation",
     roomAlt: "Bright modern dental treatment room",
     values: [
       ["Board Certified", "Swiss & European dental board certification"],
@@ -28,7 +28,7 @@ const copy = {
     demo: "ملف طبيب تجريبي",
     name: "د. آدم كريم",
     role: "طبيب أسنان رئيسي · ملف تجريبي",
-    action: "عرض ملف الطبيب",
+    action: "طلب استشارة",
     roomAlt: "غرفة علاج أسنان حديثة ومضيئة",
     values: [
       ["اعتماد مهني", "اعتماد من مجالس طب الأسنان السويسرية والأوروبية"],
@@ -68,7 +68,7 @@ export function DoctorPreview({ locale }: DoctorPreviewProps) {
           <p className="doctor-compact__disclaimer">
             {locale === "ar" ? "بيانات تجريبية للعرض فقط." : "Demonstration profile — details are not clinic claims."}
           </p>
-          <Link className="doctor-compact__link" href={`/${locale}/doctor`}>
+          <Link className="doctor-compact__link" href={`/${locale}#appointment`}>
             {content.action} <span aria-hidden="true">→</span>
           </Link>
         </div>
