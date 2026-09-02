@@ -212,7 +212,6 @@
       "eyebrow": "Your next step",
       "title": "Ready to begin with a personal consultation?",
       "description": "Tell us how we can help. Appointment and contact details will be connected once the clinic confirms its preferred booking process.",
-      "primaryAction": "Request a consultation",
       "secondaryAction": "Book an Appointment",
       "availability": "Booking integration coming in a later milestone"
     },

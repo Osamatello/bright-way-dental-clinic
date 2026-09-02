@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { BookingTrigger } from "@/components/booking/booking-trigger";
 import type { AppLocale } from "@/i18n/routing";
 
 type DoctorPreviewProps = { locale: AppLocale };
@@ -16,7 +15,6 @@ const copy = {
     demo: "Demo doctor profile",
     name: "Dr. Adam Kareem",
     role: "Lead Dentist · Demonstration Profile",
-    action: "Request a consultation",
     roomAlt: "Bright modern dental treatment room",
     values: [
       ["Board Certified", "Swiss & European dental board certification"],
@@ -28,7 +26,6 @@ const copy = {
     demo: "ملف طبيب تجريبي",
     name: "د. آدم كريم",
     role: "طبيب أسنان رئيسي · ملف تجريبي",
-    action: "طلب استشارة",
     roomAlt: "غرفة علاج أسنان حديثة ومضيئة",
     values: [
       ["اعتماد مهني", "اعتماد من مجالس طب الأسنان السويسرية والأوروبية"],
@@ -68,9 +65,6 @@ export function DoctorPreview({ locale }: DoctorPreviewProps) {
           <p className="doctor-compact__disclaimer">
             {locale === "ar" ? "بيانات تجريبية للعرض فقط." : "Demonstration profile — details are not clinic claims."}
           </p>
-          <BookingTrigger className="doctor-compact__link" variant="inline-link">
-            {content.action} <span aria-hidden="true">→</span>
-          </BookingTrigger>
         </div>
 
         <figure className="doctor-compact__room">
