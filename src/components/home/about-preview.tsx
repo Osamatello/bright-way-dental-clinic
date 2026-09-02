@@ -1,8 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
-import { primaryCtaClass } from "@/components/primitives/cta";
 import type { AppLocale } from "@/i18n/routing";
 
 type AboutPreviewProps = { locale: AppLocale };
@@ -47,13 +45,6 @@ export async function AboutPreview({ locale }: AboutPreviewProps) {
               </li>
             ))}
           </ul>
-
-          <Link className={primaryCtaClass} href={`/${locale}#doctor`}>
-            {t("action")}
-            <span aria-hidden="true" className="premium-arrow text-gold-light">
-              ↗
-            </span>
-          </Link>
         </div>
       </div>
     </section>
