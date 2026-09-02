@@ -1,0 +1,250 @@
+/*
+ * Bright Way — Home hero composition (Phase 1 visual engine).
+ * Co-located with home-hero.tsx and imported by it.
+ *
+ * - Mobile is an independent composition, not the desktop grid restacked.
+ * - Desktop is an asymmetric grid: copy on track 1, a right-bleeding media
+ *   plate on track 2, with the display headline reaching a controlled
+ *   distance onto the plate.
+ * - Every motion rule is gated behind `prefers-reduced-motion: no-preference`,
+ *   so with motion disabled the finished composition is fully present.
+ */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-block: clamp(1.75rem, 7vw, 3rem) clamp(2.75rem, 9vw, 4rem);
+}
+
+/* ---------- Shared copy elements ---------- */
+.hero__copy {
+  display: contents;
+}
+
+.hero__eyebrow {
+  order: 1;
+}
+
+.hero__headline {
+  order: 2;
+  margin: clamp(1rem, 4.5vw, 1.5rem) 0 0;
+  max-width: 15ch;
+  color: var(--navy);
+  font-size: clamp(2.4rem, 8.7vw, 3.05rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.hero__headline-line {
+  display: block;
+}
+
+.hero__headline-accent {
+  color: var(--gold);
+  font-style: italic;
+}
+
+html[lang="ar"] .hero__headline {
+  font-weight: 500;
+  line-height: 1.32;
+  letter-spacing: 0;
+}
+
+html[lang="ar"] .hero__headline-accent {
+  font-style: normal;
+}
+
+.hero__lede {
+  order: 4;
+  margin: clamp(1rem, 4vw, 1.35rem) 0 0;
+  max-width: 33rem;
+  border-inline-start: 1px solid color-mix(in srgb, var(--gold) 40%, transparent);
+  padding-inline-start: 1.1rem;
+  color: var(--slate);
+  font-size: 0.95rem;
+  line-height: 1.78;
+}
+
+html[lang="ar"] .hero__lede {
+  font-size: 1rem;
+  line-height: 2.05;
+}
+
+.hero__actions {
+  order: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.35rem;
+  margin-top: clamp(1.4rem, 5vw, 1.9rem);
+}
+
+.hero__values {
+  order: 6;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.95rem;
+  margin-top: clamp(1.5rem, 5.5vw, 2rem);
+  padding-top: 0.9rem;
+  border-top: 1px solid color-mix(in srgb, var(--navy) 12%, transparent);
+  color: color-mix(in srgb, var(--navy) 58%, transparent);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero__values li {
+  list-style: none;
+}
+
+.hero__values li + li {
+  padding-inline-start: 0.95rem;
+  border-inline-start: 1px solid color-mix(in srgb, var(--navy) 14%, transparent);
+}
+
+html[lang="ar"] .hero__values {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ---------- Media plate ---------- */
+.hero__media {
+  order: 3;
+  position: relative;
+  width: 100%;
+  margin-top: clamp(1.4rem, 5.5vw, 1.9rem);
+}
+
+.hero__media .editorial-media__frame {
+  aspect-ratio: 4 / 3;
+  border-radius: 2px;
+}
+
+/* ---------- Desktop composition ---------- */
+@media (min-width: 64rem) {
+  .hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+    align-items: center;
+    min-height: min(88svh, 54rem);
+    padding-block: clamp(3rem, 6vw, 4.5rem);
+  }
+
+  .hero__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-column: 1;
+    z-index: 2;
+    padding-inline-end: 2rem;
+  }
+
+  .hero__headline {
+    max-width: 13ch;
+    margin-inline-end: calc(-1 * var(--hero-overlap, 3rem));
+    font-size: clamp(3rem, 4.9vw, 4.9rem);
+    line-height: 0.98;
+  }
+
+  html[lang="ar"] .hero__headline {
+    font-size: clamp(2.7rem, 4.3vw, 4.15rem);
+    line-height: 1.3;
+  }
+
+  .hero__media {
+    grid-column: 2;
+    align-self: stretch;
+    width: auto;
+    margin-block: clamp(2rem, 5vw, 3.25rem);
+    margin-inline-end: calc(-1 * var(--page-gutter));
+    margin-inline-start: 0;
+  }
+
+  .hero__media .editorial-media__frame {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
+  }
+
+  /* narrow protective veil along the plate edge that sits under the headline */
+  .hero__media .editorial-media__frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background: linear-gradient(
+      to right,
+      color-mix(in srgb, var(--cream) 82%, transparent) 0%,
+      transparent 13%
+    );
+  }
+
+  html[dir="rtl"] .hero__media .editorial-media__frame::after {
+    background: linear-gradient(
+      to left,
+      color-mix(in srgb, var(--cream) 82%, transparent) 0%,
+      transparent 13%
+    );
+  }
+}
+
+@media (min-width: 80rem) {
+  .hero__copy {
+    --hero-overlap: 4.5rem;
+  }
+}
+
+/* ---------- Entrance choreography (load, CSS-only) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero__reveal {
+    opacity: 0;
+    transform: translateY(0.9rem);
+    animation: hero-rise 0.72s var(--ease-premium) forwards;
+  }
+
+  .hero__reveal--1 {
+    animation-delay: 0.04s;
+  }
+
+  .hero__reveal--2 {
+    animation-delay: 0.12s;
+  }
+
+  .hero__reveal--3 {
+    animation-delay: 0.2s;
+  }
+
+  .hero__reveal--4 {
+    animation-delay: 0.28s;
+  }
+}
+
+@keyframes hero-rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

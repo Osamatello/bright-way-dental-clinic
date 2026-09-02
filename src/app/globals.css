@@ -101,10 +101,6 @@ html[lang="ar"] [class*="tracking-"] {
   letter-spacing: 0 !important;
 }
 
-html[lang="ar"] .hero-title-accent {
-  font-style: normal;
-}
-
 .fine-rule {
   border-color: color-mix(in srgb, var(--navy) 14%, transparent);
 }
@@ -145,193 +141,87 @@ html[dir="rtl"] .group:focus-visible .premium-arrow {
   transform: translate(-0.22rem, -0.22rem);
 }
 
-.hero-stage {
+/*
+ * Editorial media — the one shared image treatment (see
+ * components/primitives/editorial-media.tsx). A filled, aspect-reserved frame
+ * with a hairline inset edge and one soft directional shadow. Layout-specific
+ * overrides (bleed, absolute fill, protective veil) live with the consumer,
+ * e.g. components/home/home-hero.css.
+ */
+.editorial-media__frame {
   position: relative;
-  isolation: isolate;
+  display: block;
   overflow: hidden;
-  background: var(--cream);
-}
-
-.hero-composition {
-  position: relative;
-  min-height: calc(100svh - 82px);
-}
-
-.hero-copy {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  width: 55%;
-  min-height: calc(100svh - 82px);
-  align-items: center;
-  padding-block: 4.5rem 9.5rem;
-}
-
-.hero-copy::before {
-  position: absolute;
-  z-index: -1;
-  inset-block: 1.5rem;
-  inset-inline-start: -50vw;
-  inset-inline-end: -7rem;
-  border-radius: 0 clamp(9rem, 14vw, 14rem) clamp(9rem, 14vw, 14rem) 0;
-  background: color-mix(in srgb, var(--cream) 97%, white);
-  box-shadow: 24px 0 70px rgba(21, 36, 53, 0.035);
-  content: "";
-}
-
-html[dir="rtl"] .hero-copy::before {
-  border-radius: clamp(9rem, 14vw, 14rem) 0 0 clamp(9rem, 14vw, 14rem);
-  box-shadow: -24px 0 70px rgba(21, 36, 53, 0.035);
-}
-
-.hero-media {
-  position: absolute;
-  z-index: 1;
-  inset-block: 1.5rem 2rem;
-  inset-inline-end: 0;
-  width: 62%;
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--gold-light) 42%, transparent);
-  border-radius: clamp(10rem, 16vw, 16rem) 1.25rem 1.25rem clamp(3rem, 6vw, 6rem);
   background: var(--sand);
-  box-shadow: var(--shadow-soft);
-  clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
-  animation: hero-media-in 950ms var(--ease-premium) both;
+  box-shadow: 0 32px 64px -30px rgba(21, 36, 53, 0.34);
 }
 
-html[dir="rtl"] .hero-media {
-  border-radius: 1.25rem clamp(10rem, 16vw, 16rem) clamp(3rem, 6vw, 6rem) 1.25rem;
-  clip-path: polygon(0 0, 92% 0, 100% 20%, 100% 100%, 0 100%);
-}
-
-.hero-media-image {
-  transform: scale(1.035);
-  animation: hero-image-settle 1400ms var(--ease-premium) 100ms both;
-}
-
-.hero-values {
+.editorial-media__frame::before {
+  content: "";
   position: absolute;
-  z-index: 20;
-  inset-block-end: 2rem;
-  inset-inline-start: var(--page-gutter);
-  display: grid;
-  width: min(47%, 39rem);
-  grid-template-columns: repeat(3, 1fr);
-  border-block: 1px solid color-mix(in srgb, var(--navy) 13%, transparent);
-  background: color-mix(in srgb, var(--cream) 90%, transparent);
-  backdrop-filter: blur(12px);
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--navy) 12%, transparent);
 }
 
-.reveal-up {
-  animation: reveal-up 720ms var(--ease-premium) both;
+.editorial-media__image {
+  object-fit: cover;
 }
 
-.reveal-delay-1 {
-  animation-delay: 80ms;
+.editorial-media__caption {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin-top: 0.85rem;
+  color: var(--slate);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
 }
 
-.reveal-delay-2 {
-  animation-delay: 160ms;
+.editorial-media__caption-rule {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1px;
+  background: color-mix(in srgb, var(--gold) 55%, transparent);
+  transform: translateY(-0.3em);
 }
 
-.reveal-delay-3 {
-  animation-delay: 240ms;
+html[lang="ar"] .editorial-media__caption {
+  font-size: 0.82rem;
+  letter-spacing: 0;
 }
 
-@keyframes reveal-up {
+@media (prefers-reduced-motion: no-preference) {
+  .editorial-media__frame[data-reveal="media"] {
+    animation: editorial-media-reveal 0.95s var(--ease-premium) both;
+  }
+
+  .editorial-media__frame[data-reveal="media"] .editorial-media__image {
+    animation: editorial-media-settle 1.5s var(--ease-premium) 0.05s both;
+  }
+}
+
+@keyframes editorial-media-reveal {
   from {
     opacity: 0;
-    transform: translateY(1.15rem);
+    clip-path: inset(0 0 100% 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
   }
 }
 
-@keyframes hero-media-in {
+@keyframes editorial-media-settle {
   from {
-    opacity: 0;
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 88% 100%, 88% 20%);
-  }
-}
-
-html[dir="rtl"] .hero-media {
-  animation-name: hero-media-in-rtl;
-}
-
-@keyframes hero-media-in-rtl {
-  from {
-    opacity: 0;
-    clip-path: polygon(0 0, 0 0, 12% 20%, 12% 100%, 0 100%);
-  }
-}
-
-@keyframes hero-image-settle {
-  to {
-    transform: scale(1);
+    transform: scale(1.045);
   }
 }
 
 @media (max-width: 639px) {
   .architectural-grid {
     background-size: 5rem 5rem;
-  }
-}
-
-@media (max-width: 1023px) {
-  .hero-composition {
-    display: flex;
-    min-height: auto;
-    flex-direction: column;
-    padding-block: 2rem 1.25rem;
-  }
-
-  .hero-copy {
-    width: 100%;
-    min-height: auto;
-    padding-block: 0 1.75rem;
-  }
-
-  .hero-copy::before {
-    display: none;
-  }
-
-  .hero-media,
-  html[dir="rtl"] .hero-media {
-    position: relative;
-    inset: auto;
-    order: 2;
-    width: 100%;
-    min-height: clamp(21rem, 66vw, 35rem);
-    border-radius: 5.5rem 1rem 5.5rem 1rem;
-    clip-path: polygon(0 9%, 76% 0, 100% 10%, 100% 100%, 0 100%);
-  }
-
-  .hero-values {
-    position: relative;
-    inset: auto;
-    z-index: 4;
-    order: 3;
-    width: 100%;
-    background: transparent;
-    backdrop-filter: none;
-  }
-}
-
-@media (max-width: 639px) {
-  .hero-composition {
-    padding-block-start: 1.55rem;
-  }
-
-  .hero-media,
-  html[dir="rtl"] .hero-media {
-    min-height: 20.5rem;
-    border-radius: 4rem 0.85rem 4rem 0.85rem;
-  }
-
-  .hero-values {
-    margin-top: 0.85rem;
   }
 }
 
