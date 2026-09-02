@@ -3,7 +3,6 @@ import "./site-footer.css";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
-import { BookingTrigger } from "@/components/booking/booking-trigger";
 import type { AppLocale } from "@/i18n/routing";
 
 import { BrandMark } from "../brand/brand-mark";
@@ -35,17 +34,13 @@ export async function SiteFooter({ locale }: SiteFooterProps) {
           <nav aria-label={footer("explore")} className="site-footer__links">
             {links.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}
           </nav>
-          <div className="site-footer__action">
-            <p>{locale === "ar" ? "خطوتك التالية" : "Your next step"}</p>
-            <BookingTrigger showArrow variant="footer-pill">
-              {nav("book")}
-            </BookingTrigger>
-          </div>
         </div>
         <div className="site-footer__bottom">
           <p>© {new Date().getFullYear()} {footer("rights")}</p>
           <p>{locale === "ar" ? "موقع تجريبي — تُستبدل التفاصيل قبل الإطلاق." : "Demo website — details will be replaced before launch."}</p>
-          <Link href={`/${locale}#top`}>{locale === "ar" ? "العودة للأعلى" : "Back to top"}</Link>
+          <Link className="site-footer__totop" href={`/${locale}#top`}>
+            {locale === "ar" ? "العودة للأعلى" : "Back to top"}
+          </Link>
         </div>
       </div>
     </footer>

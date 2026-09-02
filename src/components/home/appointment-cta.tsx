@@ -17,11 +17,7 @@ export async function AppointmentCta({}: AppointmentCtaProps) {
         <div className="appointment-compact__action">
           <p>{t("description")}</p>
           <div>
-            <BookingTrigger variant="button-light">{t("primaryAction")}</BookingTrigger>
-            <BookingTrigger
-              className="border-white/55 text-white hover:border-white hover:bg-white hover:text-navy"
-              variant="button-secondary"
-            >
+            <BookingTrigger showArrow variant="primary-invert">
               {t("secondaryAction")}
             </BookingTrigger>
           </div>
