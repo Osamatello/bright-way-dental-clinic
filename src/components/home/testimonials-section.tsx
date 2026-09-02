@@ -44,8 +44,10 @@ export function TestimonialsSection({ locale }: TestimonialsSectionProps) {
 
           <div className="testimonials__cards">
             {content.items.map(([quote, author]) => (
-              <figure className="testimonials__card" key={author}>
-                <div aria-label="5 out of 5 stars" className="testimonials__stars">★★★★★</div>
+              <figure className="testimonials__card" key={author} tabIndex={0}>
+                <div aria-label={locale === "ar" ? "خمس نجوم تجريبية" : "Five demo stars"} className="testimonials__stars">
+                  {[0, 1, 2, 3, 4].map((star) => <span aria-hidden="true" key={star}>★</span>)}
+                </div>
                 <blockquote>“{quote}”</blockquote>
                 <figcaption>{author}</figcaption>
               </figure>
@@ -60,7 +62,7 @@ export function TestimonialsSection({ locale }: TestimonialsSectionProps) {
             className="object-cover"
             fill
             sizes="(max-width: 1023px) 100vw, 42vw"
-            src="/images/bright-way-waiting-lounge.webp"
+            src="/images/bright-way-waiting-v2.webp"
           />
         </figure>
       </div>

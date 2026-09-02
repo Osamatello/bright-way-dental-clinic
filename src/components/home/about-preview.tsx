@@ -1,61 +1,56 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
 import type { AppLocale } from "@/i18n/routing";
 
 import { ButtonLink } from "../ui/button-link";
 
-type AboutPreviewProps = {
-  locale: AppLocale;
-};
+type AboutPreviewProps = { locale: AppLocale };
+
+const icons = [
+  <svg aria-hidden="true" key="conversation" viewBox="0 0 24 24"><path d="M4 5.5h16v10H9l-5 3v-13Z"/><path d="M8 9h8M8 12h5"/></svg>,
+  <svg aria-hidden="true" key="care" viewBox="0 0 24 24"><path d="M12 20s-7-4.2-7-9.5A3.5 3.5 0 0 1 12 9a3.5 3.5 0 0 1 7 1.5C19 15.8 12 20 12 20Z"/></svg>,
+  <svg aria-hidden="true" key="calm" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/><circle cx="12" cy="12" r="3"/></svg>,
+];
 
 export async function AboutPreview({ locale }: AboutPreviewProps) {
   const t = await getTranslations("Home.about");
   const details = [t("detailOne"), t("detailTwo"), t("detailThree")];
 
   return (
-    <section className="bg-cream py-20 sm:py-28 lg:py-36" id="about">
-      <div className="site-container">
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-          <div>
-            <p className="text-[0.66rem] font-semibold uppercase tracking-[0.19em] text-slate">
-              {t("eyebrow")}
-            </p>
-            <h2 className="display-heading mt-8 max-w-xl text-5xl leading-[1.05] sm:text-6xl">
-              {t("title")}
-            </h2>
-          </div>
+    <section className="about-story" id="about">
+      <div className="site-container about-story__grid">
+        <figure className="about-story__media">
+          <Image
+            alt={locale === "ar" ? "محادثة هادئة حول العناية بالأسنان" : "A calm dental care consultation"}
+            className="object-cover"
+            fill
+            sizes="(max-width: 1023px) 100vw, 48vw"
+            src="/images/bright-way-about-consultation.webp"
+          />
+          <span className="about-story__image-note">
+            {locale === "ar" ? "صورة توضيحية تجريبية" : "Demo presentation image"}
+          </span>
+        </figure>
 
-          <div className="border-t fine-rule pt-8 lg:pt-10">
-            <p className="display-heading max-w-3xl text-4xl leading-[1.12] text-navy/72 sm:text-5xl">
-              {t("statement")}
-            </p>
-            <div className="mt-10 grid gap-7 text-sm leading-8 text-slate sm:grid-cols-2 sm:text-base">
-              <p>{t("descriptionOne")}</p>
-              <p>{t("descriptionTwo")}</p>
-            </div>
+        <div className="about-story__content">
+          <p className="section-kicker">{t("eyebrow")}</p>
+          <h2>{t("title")}</h2>
+          <p className="about-story__statement">{t("statement")}</p>
+          <p className="about-story__description">{t("descriptionOne")}</p>
 
-            <ol className="mt-12 grid border-s border-t fine-rule sm:grid-cols-3">
-              {details.map((detail, index) => (
-                <li
-                  className="flex min-h-36 flex-col justify-between border-b border-e fine-rule p-5"
-                  key={detail}
-                >
-                  <span className="text-[0.62rem] text-slate">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-sm font-medium text-navy">{detail}</span>
-                </li>
-              ))}
-            </ol>
+          <ul className="about-story__values">
+            {details.map((detail, index) => (
+              <li key={detail}>
+                <span className="about-story__icon">{icons[index]}</span>
+                <span>{detail}</span>
+              </li>
+            ))}
+          </ul>
 
-            <ButtonLink
-              className="mt-9"
-              href={`/${locale}/about`}
-              variant="secondary"
-            >
-              {t("action")}
-            </ButtonLink>
-          </div>
+          <ButtonLink href={`/${locale}/about`} variant="secondary">
+            {t("action")}
+          </ButtonLink>
         </div>
       </div>
     </section>
