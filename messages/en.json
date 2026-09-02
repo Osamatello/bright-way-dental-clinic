@@ -18,6 +18,101 @@
   "Brand": {
     "clinic": "Dental Clinic"
   },
+  "Booking": {
+    "triggerLabel": "Book an Appointment",
+    "dialogLabel": "Book an appointment",
+    "close": "Close",
+    "progress": {
+      "aria": "Booking progress",
+      "stepOf": "Step {current} of {total}"
+    },
+    "nav": {
+      "back": "Back",
+      "continue": "Continue",
+      "confirm": "Confirm request",
+      "submitting": "Sending…",
+      "done": "Done"
+    },
+    "steps": {
+      "treatment": {
+        "title": "What can we help with?",
+        "description": "Choose the treatment or reason for your visit. You can add more detail later.",
+        "label": "Treatment or reason",
+        "placeholder": "Select a treatment or inquiry",
+        "options": {
+          "general": "General Dentistry & Check-up",
+          "cosmetic": "Cosmetic Dentistry & Aesthetic Consultation",
+          "implants": "Dental Implants Consultation",
+          "orthodontics": "Orthodontics & Teeth Alignment",
+          "whitening": "Teeth Whitening",
+          "rootCanal": "Root Canal Treatment / Tooth Pain",
+          "pediatric": "Pediatric Dental Care",
+          "emergency": "Urgent / Emergency Concern",
+          "other": "Other Consultation / General Inquiry"
+        }
+      },
+      "date": {
+        "title": "A preferred date?",
+        "description": "Pick the day that suits you best. This is a preference, not a confirmed slot.",
+        "label": "Preferred date",
+        "optional": "(optional)",
+        "hint": "Leave empty if you have no preference — the clinic will suggest options."
+      },
+      "time": {
+        "title": "A preferred time of day?",
+        "description": "Let us know when you would usually be available.",
+        "label": "Preferred time of day",
+        "options": {
+          "any": "Any time of day",
+          "morning": "Morning (09:00 - 13:00)",
+          "afternoon": "Afternoon (13:00 - 17:00)",
+          "evening": "Evening (17:00 - 20:00)"
+        }
+      },
+      "details": {
+        "title": "Your details",
+        "description": "So the clinic can reach you to confirm the appointment.",
+        "fullNameLabel": "Full name",
+        "fullNamePlaceholder": "e.g. Eleanor Vance",
+        "phoneLabel": "Phone number",
+        "phonePlaceholder": "e.g. +971 50 123 4567",
+        "emailLabel": "Email address",
+        "emailPlaceholder": "e.g. eleanor@example.com",
+        "messageLabel": "Notes or questions",
+        "messagePlaceholder": "Anything you would like the clinic to know beforehand…",
+        "optional": "(optional)"
+      },
+      "review": {
+        "title": "Review your request",
+        "description": "Check everything is right, then send it to the clinic.",
+        "edit": "Edit",
+        "headingTreatment": "Treatment",
+        "headingWhen": "Preferred time",
+        "headingContact": "Contact",
+        "headingNotes": "Notes",
+        "noDate": "No preferred date · {time}",
+        "disclaimer": "Sending this is a request only. The clinic will contact you to confirm the exact date and time — no appointment is booked until they do."
+      },
+      "success": {
+        "title": "Request received",
+        "message": "Your appointment request has been received. The clinic will confirm the appointment with you.",
+        "note": "You will be contacted using the phone number or email you provided."
+      }
+    },
+    "errors": {
+      "required": "Please choose an option.",
+      "dateInvalid": "Please enter a valid date.",
+      "dateInPast": "Please choose a date that is not in the past.",
+      "nameTooShort": "Please enter your full name.",
+      "nameTooLong": "This name is too long.",
+      "phoneInvalid": "Please enter a valid phone number.",
+      "emailInvalid": "Please enter a valid email address.",
+      "messageTooLong": "This message is too long.",
+      "submitFailed": "Something went wrong sending your request. Please try again.",
+      "networkError": "We couldn't reach the server. Check your connection and try again.",
+      "rateLimited": "Too many attempts. Please wait a moment and try again."
+    }
+  },
   "Preview": {
     "eyebrow": "Design foundation · Milestone 01",
     "titleLineOne": "Quiet confidence,",
@@ -118,7 +213,7 @@
       "title": "Ready to begin with a personal consultation?",
       "description": "Tell us how we can help. Appointment and contact details will be connected once the clinic confirms its preferred booking process.",
       "primaryAction": "Request a consultation",
-      "secondaryAction": "Contact the clinic",
+      "secondaryAction": "Book an Appointment",
       "availability": "Booking integration coming in a later milestone"
     },
     "journey": {

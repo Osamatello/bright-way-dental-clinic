@@ -1,12 +1,11 @@
 import { getTranslations } from "next-intl/server";
 
+import { BookingTrigger } from "@/components/booking/booking-trigger";
 import type { AppLocale } from "@/i18n/routing";
-
-import { ButtonLink } from "../ui/button-link";
 
 type AppointmentCtaProps = { locale: AppLocale };
 
-export async function AppointmentCta({ locale }: AppointmentCtaProps) {
+export async function AppointmentCta({}: AppointmentCtaProps) {
   const t = await getTranslations("Home.appointment");
   return (
     <section className="appointment-compact" id="appointment">
@@ -18,8 +17,13 @@ export async function AppointmentCta({ locale }: AppointmentCtaProps) {
         <div className="appointment-compact__action">
           <p>{t("description")}</p>
           <div>
-            <ButtonLink href={`/${locale}#contact-section`} variant="light">{t("primaryAction")}</ButtonLink>
-            <ButtonLink className="border-white/55 text-white hover:border-white hover:bg-white hover:text-navy" href={`/${locale}#contact-section`} variant="secondary">{t("secondaryAction")}</ButtonLink>
+            <BookingTrigger variant="button-light">{t("primaryAction")}</BookingTrigger>
+            <BookingTrigger
+              className="border-white/55 text-white hover:border-white hover:bg-white hover:text-navy"
+              variant="button-secondary"
+            >
+              {t("secondaryAction")}
+            </BookingTrigger>
           </div>
         </div>
       </div>

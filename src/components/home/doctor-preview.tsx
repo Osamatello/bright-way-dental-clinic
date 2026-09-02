@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 
+import { BookingTrigger } from "@/components/booking/booking-trigger";
 import type { AppLocale } from "@/i18n/routing";
 
 type DoctorPreviewProps = { locale: AppLocale };
@@ -68,9 +68,9 @@ export function DoctorPreview({ locale }: DoctorPreviewProps) {
           <p className="doctor-compact__disclaimer">
             {locale === "ar" ? "بيانات تجريبية للعرض فقط." : "Demonstration profile — details are not clinic claims."}
           </p>
-          <Link className="doctor-compact__link" href={`/${locale}#appointment`}>
+          <BookingTrigger className="doctor-compact__link" variant="inline-link">
             {content.action} <span aria-hidden="true">→</span>
-          </Link>
+          </BookingTrigger>
         </div>
 
         <figure className="doctor-compact__room">

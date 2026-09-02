@@ -1,8 +1,19 @@
-import Link from "next/link";
-
+import { BookingTrigger } from "@/components/booking/booking-trigger";
+import type { TreatmentKey } from "@/lib/booking/schema";
 import type { AppLocale } from "@/i18n/routing";
 
 type TreatmentsPreviewProps = { locale: AppLocale };
+
+const SLUG_TO_TREATMENT: Record<string, TreatmentKey> = {
+  "general-dentistry": "general",
+  "cosmetic-dentistry": "cosmetic",
+  "dental-implants": "implants",
+  orthodontics: "orthodontics",
+  "teeth-whitening": "whitening",
+  "root-canal-treatment": "rootCanal",
+  "pediatric-dentistry": "pediatric",
+  "emergency-dentistry": "emergency",
+};
 
 const serviceCopy = {
   en: {
@@ -43,7 +54,7 @@ export function TreatmentsPreview({ locale }: TreatmentsPreviewProps) {
         </header>
 
         <div className="treatment-menu__grid">
-          {content.services.map(([title, detail, availability]) => (
+          {content.services.map(([title, detail, availability, slug]) => (
             <article className="treatment-menu__card" key={title}>
               <div className="treatment-menu__topline">
                 <div>
@@ -52,9 +63,9 @@ export function TreatmentsPreview({ locale }: TreatmentsPreviewProps) {
                 </div>
                 <span title={content.demo}>◷ {availability}</span>
               </div>
-              <Link href={`/${locale}#appointment`}>
+              <BookingTrigger treatment={SLUG_TO_TREATMENT[slug]} variant="card-link">
                 {content.select}
-              </Link>
+              </BookingTrigger>
             </article>
           ))}
         </div>

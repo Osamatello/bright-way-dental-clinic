@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import { BookingTrigger } from "@/components/booking/booking-trigger";
 import type { AppLocale } from "@/i18n/routing";
 
 import { LocaleSwitcher } from "./locale-switcher";
@@ -96,13 +97,13 @@ export function MobileNavigation({
           </div>
           <div className="mt-auto flex items-center justify-between gap-3 border-t border-navy/10 pt-6">
             <LocaleSwitcher locale={locale} />
-            <Link
-              className="inline-flex min-h-12 flex-1 items-center justify-center gap-3 rounded-lg bg-gold px-5 text-[0.76rem] font-semibold tracking-[0.04em] text-white shadow-[0_12px_30px_rgba(11,114,116,0.16)]"
-              href={`/${locale}#appointment`}
-              onClick={() => setIsOpen(false)}
+            <BookingTrigger
+              onBeforeOpen={() => setIsOpen(false)}
+              showArrow
+              variant="drawer-pill"
             >
-              {bookLabel} <span aria-hidden="true" className="text-gold">↗</span>
-            </Link>
+              {bookLabel}
+            </BookingTrigger>
           </div>
         </nav>
       </div>
