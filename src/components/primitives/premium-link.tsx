@@ -31,8 +31,8 @@ const SIZE: Record<PremiumLinkSize, string> = {
 
 const VARIANT: Record<PremiumLinkVariant, string> = {
   primary:
-    "bg-navy text-white shadow-[0_16px_38px_-16px_rgba(21,36,53,0.55)] " +
-    "hover:-translate-y-0.5 hover:bg-navy/92 hover:shadow-[0_22px_46px_-18px_rgba(21,36,53,0.6)]",
+    "bg-gold text-white shadow-[0_16px_38px_-16px_rgba(11,114,116,0.5)] " +
+    "hover:-translate-y-0.5 hover:bg-gold/92 hover:shadow-[0_22px_46px_-18px_rgba(11,114,116,0.55)]",
   secondary:
     "border border-navy/20 bg-white/55 text-navy hover:border-gold/55 hover:bg-white",
   quiet:

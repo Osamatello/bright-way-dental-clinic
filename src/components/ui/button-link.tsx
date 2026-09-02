@@ -9,7 +9,7 @@ type ButtonLinkProps = {
 
 const variants = {
   primary:
-    "border-navy bg-navy text-white hover:bg-transparent hover:text-navy",
+    "border-gold bg-gold text-white hover:bg-transparent hover:text-gold",
   secondary:
     "border-navy/25 bg-transparent text-navy hover:border-navy hover:bg-navy hover:text-white",
   light:

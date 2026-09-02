@@ -66,7 +66,7 @@ export async function HomeHero({ locale }: HomeHeroProps) {
           preload
           reveal
           sizes="(max-width: 64rem) 100vw, 52vw"
-          src="/images/bright-way-clinic-hero.webp"
+          src="/images/bright-way-hero-white.webp"
         />
       </div>
     </section>

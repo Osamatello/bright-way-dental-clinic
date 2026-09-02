@@ -23,7 +23,7 @@ export async function TechnologyComfort({}: TechnologyComfortProps) {
             className="object-cover"
             fill
             sizes="(max-width: 1023px) 100vw, 48vw"
-            src="/images/technology-comfort.jpg"
+            src="/images/bright-way-hero-white.webp"
           />
           <figcaption className="absolute inset-x-4 bottom-4 border border-white/25 bg-navy/88 px-5 py-4 text-xs tracking-[0.08em] text-white backdrop-blur-sm sm:max-w-64">
             {t("imageCaption")}
