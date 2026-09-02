@@ -18,9 +18,9 @@
 .visit-us__map{min-height:17rem}
 @media(prefers-reduced-motion:reduce){.treatment-menu__card,.testimonials__card,.testimonials__stars span{transition:none}}
 .testimonials__card figcaption{display:flex;align-items:center;gap:.55rem;margin-top:.75rem}.testimonials__avatar{display:grid;width:2rem;height:2rem;flex-shrink:0;place-items:center;border:1px solid rgba(11,114,116,.14);border-radius:50%;background:var(--sand);color:var(--gold);font-size:.62rem;font-weight:800;letter-spacing:.02em}
-.appointment-compact__action>p{max-width:42rem;color:rgba(255,255,255,.9);font-size:clamp(1.05rem,1.25vw,1.18rem);line-height:1.72}
+.appointment-compact__action>p{max-width:42rem;color:rgba(255,255,255,.9);font-size:clamp(1.05rem,1.55vw,1.3rem);line-height:1.75}
 .visit-us__grid{grid-template-columns:minmax(0,1.12fr) minmax(20rem,.88fr);align-items:start}.visit-us__map-link{align-items:center;margin-top:.8rem}.visit-us__info{margin-top:.35rem}.visit-us__info ul{margin-block:1rem 0}.visit-us__info li{padding-block:1rem;font-size:.86rem;line-height:1.5}.visit-us__info li span{width:2.35rem;height:2.35rem}
-.site-footer__brand>p{max-width:22rem;color:rgba(255,255,255,.74);font-size:.86rem;line-height:1.68}
+.site-footer__brand>p{max-width:22rem;color:rgba(255,255,255,.8);font-size:.86rem;line-height:1.68}
 @media(max-width:39.99rem){.treatment-menu__card{grid-template-columns:7.25rem minmax(0,1fr);min-height:12rem;padding:0}.treatment-menu__body{padding:1rem}.about-story__values li{padding-block:.75rem}.visit-us__grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.treatment-menu__media img{transition:none}}
 @media(max-width:63.99rem){.visit-us__grid{grid-template-columns:1fr}.visit-us__info{margin-top:0}}
